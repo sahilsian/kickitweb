@@ -13,6 +13,8 @@ import { GravityFormsComponent } from '../GravityForms/GravityFormsField'
 import { List } from '../Core/List'
 import { ListItem } from '../Core/List/ListItem'
 import Image from 'next/image'
+import { Label } from '../Custom/Label'
+import { HeadingLabel } from '../Custom/HeadingLabel'
 
 export const BlockRenderer = ({ items, blocks }) => {
 
@@ -62,6 +64,17 @@ export const BlockRenderer = ({ items, blocks }) => {
                     target={block.attributes.data?.destination?.target}
                     align={block.attributes.data.align}
                 ></CallToActionButton>
+            }
+
+            case "acf/heading-label": {
+                console.log(block)
+                return <HeadingLabel
+                    textAlign={block.attributes.data.align}
+                    content={block.attributes.data.text}
+                    color={block.attributes.data.color}
+                >
+
+                </HeadingLabel>
             }
             
             // Just a Div :)
