@@ -50,8 +50,8 @@ export const Page = (props) => {
                 <meta name="twitter:description" content={props.seo.metaDesc}></meta>
                 <meta name="twitter:image" content={props.seo.opengraphImage?.uri || ""}></meta>
             </Head>
-            <div className='relative overflow-hidden w-full'>
-                <div style={{width: active ? "300px" : "0px", transition: "width 0.2s", backgroundColor: siteConfig.colors.solids.cover}} className='fixed h-full overflow-hidden z-[50]'>
+            <div className='relative overflow-hidden w-full '>
+                <div style={{width: active ? "300px" : "0px", transition: "width 0.2s", backgroundColor: siteConfig.colors.solids.cover}} className='fixed h-screen overflow-hidden z-[50]'>
                     <div className='pt-[100px] px-[20px]'>
 
                     {/* Mobile Menu */}
@@ -59,7 +59,7 @@ export const Page = (props) => {
                         console.log(item)
                         return (
                             <div>
-                            <div style={{opacity: active ? "100" : "0", transition: '0.3s all ease'}} className='text-white'>
+                            <div style={{opacity: active ? "100" : "0", transition: '0.3s opacity ease'}} className='text-white'>
                                 <Link className='block text-[18px] pb-3 mb-2' href={item.destination}>
                                     {item.label}
                                 </Link>
@@ -67,7 +67,7 @@ export const Page = (props) => {
                             </div>
                             {item.subMenuItem.map((subitem) => {
                                 return (
-                                    <div style={{opacity: active ? "100" : "0", transition: '0.3s all ease'}}>
+                                    <div style={{opacity: active ? "100" : "0", transition: '0.3s opacity ease'}}>
                                         <Link className='block text-white font-[200] text-[15px] pl-5 pb-3 mb-2' href={subitem.destination}>
                                     {subitem.label}
                                     </Link>
