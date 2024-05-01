@@ -35,7 +35,9 @@ export const MainMenu = ({ items, active, callToActionLabel, callToActionDestina
                 <div className={`max-w-[1280px] mx-auto flex justify-between align-middle`}>
 
                     {/* Site Logo. Defined by logo.png */}
+                    <Link href={"/"}>
                     <Image className="my-7 max-[960px]:max-w-[100px]" width={200} height={63} objectFit="cover" src={'/logo.png'}></Image>
+                    </Link>
 
                     {/* Nav Links and Call to Action  */}
                     <div className={`flex max-[820px]:hidden items-center gap-9`}>

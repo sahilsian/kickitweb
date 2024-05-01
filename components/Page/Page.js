@@ -94,7 +94,7 @@ export const Page = (props) => {
                     <ParallaxProvider>
                         <BlockRenderer items={props.mainMenuItems} blocks={props.blocks}></BlockRenderer>
                     </ParallaxProvider>
-                    <Footer></Footer>
+                    <Footer items={props.mainMenuItems}></Footer>
                 </div>
             </div>
 
