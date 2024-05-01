@@ -4,13 +4,13 @@ import { CallToActionButton } from "../../Custom/CallToActionButton";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Heading } from "../../Core/Heading";
 import { Paragraph } from "../../Core/Paragraph";
 import { Label } from "../../Custom/Label";
 import { useCallback, useEffect, useState } from "react";
 
-export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) =>
+export const MainMenu = ({ items, active, callToActionLabel, callToActionDestination, onClick }) =>
 {
     const router = useRouter();
 
@@ -31,8 +31,9 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
 
     return (
         <div  className={`m-auto fixed top-0 z-[1000] left-0 right-0 `}>
-            <div style={{backgroundColor: scrollY > 100 ? `${siteConfig.colors.solids.cover}D9` : "unset"}} className={` transition-all m-auto w-full px-5`}>
+            <div style={{backgroundColor: scrollY > 100 || active ? `${siteConfig.colors.solids.cover}${active ? "" : "D9"}` : "unset"}} className={` transition-all m-auto w-full px-5`}>
                 <div className={`max-w-[1280px] mx-auto flex justify-between align-middle`}>
+
                     {/* Site Logo. Defined by logo.png */}
                     <Image className="my-7 max-[960px]:max-w-[100px]" width={200} height={63} objectFit="cover" src={'/logo.png'}></Image>
 
@@ -79,6 +80,11 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                         <div>
                             <CallToActionButton destination={callToActionDestination} buttonLabel={callToActionLabel} type="secondary"></CallToActionButton>
                         </div>
+                    </div>
+
+                    {/* Mobile Header Button */}
+                    <div className="my-7 cursor-pointer min-[820px]:hidden" onClick={onClick}>
+                    <FontAwesomeIcon className="hover:opacity-80 transition-all" style={{width: "24px", height: "24px"}} color={"#FFFFFF"} size="sm" icon={faBars} />
                     </div>
                 </div>
             </div>

@@ -6,9 +6,15 @@ import { Analytics } from '@vercel/analytics/react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Footer } from './Footer';
+import { act, useEffect, useState } from 'react';
+import siteConfig from '../../site.config';
+import Link from 'next/link';
+import { CallToActionButton } from '../Custom/CallToActionButton';
 
 export const Page = (props) => {
     const router = useRouter()
+    const [active, setActive] = useState(false)
+
     return (
         <div className={`font-heading`}>
             <Head>
@@ -44,14 +50,55 @@ export const Page = (props) => {
                 <meta name="twitter:description" content={props.seo.metaDesc}></meta>
                 <meta name="twitter:image" content={props.seo.opengraphImage?.uri || ""}></meta>
             </Head>
-            <GoogleAnalytics gaId="G-8QSWSWGY9W" />
+            <div className='relative overflow-hidden w-full'>
+                <div style={{width: active ? "300px" : "0px", transition: "width 0.2s", backgroundColor: siteConfig.colors.solids.cover}} className='fixed h-full overflow-hidden z-[50]'>
+                    <div className='pt-[100px] px-[20px]'>
 
-            <MainMenu items={props.mainMenuItems} callToActionLabel={props.callToActionLabel} callToActionDestination={props.callToActionDestination}></MainMenu>
-            <Analytics></Analytics>
-            <ParallaxProvider>
-                <BlockRenderer items={props.mainMenuItems} blocks={props.blocks}></BlockRenderer>
-            </ParallaxProvider>
-            <Footer></Footer>
+                    {/* Mobile Menu */}
+                    {props.mainMenuItems.map((item) => {
+                        console.log(item)
+                        return (
+                            <div>
+                            <div style={{opacity: active ? "100" : "0", transition: '0.3s all ease'}} className='text-white'>
+                                <Link className='block text-[18px] pb-3 mb-2' href={item.destination}>
+                                    {item.label}
+                                </Link>
+                                
+                            </div>
+                            {item.subMenuItem.map((subitem) => {
+                                return (
+                                    <div style={{opacity: active ? "100" : "0", transition: '0.3s all ease'}}>
+                                        <Link className='block text-white font-[200] text-[15px] pl-5 pb-3 mb-2' href={subitem.destination}>
+                                    {subitem.label}
+                                    </Link>
+                                    </div>
+                                )
+                                })}
+                            </div>
+                        )
+                    })}
+                    </div>
+                    <div style={{opacity: active ? "100" : "0", transition: '0.3s all ease'}} className='p-4'>
+                        <CallToActionButton destination={props.callToActionDestination} buttonLabel={props.callToActionLabel} type="secondary"></CallToActionButton>
+                    </div>
+
+                </div>
+                <div >
+                    {/* All Site Content */}
+
+                    <MainMenu active={active} onClick={()=> {
+                        setActive(!active);
+                        
+                    }} items={props.mainMenuItems} callToActionLabel={props.callToActionLabel} callToActionDestination={props.callToActionDestination}></MainMenu>
+                    <Analytics></Analytics>
+                    <ParallaxProvider>
+                        <BlockRenderer items={props.mainMenuItems} blocks={props.blocks}></BlockRenderer>
+                    </ParallaxProvider>
+                    <Footer></Footer>
+                </div>
+            </div>
+
+
         </div>
     )
 }
