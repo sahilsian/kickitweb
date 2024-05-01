@@ -79,7 +79,7 @@ export const Page = (props) => {
                     })}
                     </div>
                     <div style={{opacity: active ? "100" : "0", transition: '0.3s all ease'}} className='p-4'>
-                        <CallToActionButton destination={props.callToActionDestination} buttonLabel={props.callToActionLabel} type="secondary"></CallToActionButton>
+                        <CallToActionButton destination={props.callToActionDestination} buttonLabel={props.callToActionLabel} type="primary"></CallToActionButton>
                     </div>
 
                 </div>
