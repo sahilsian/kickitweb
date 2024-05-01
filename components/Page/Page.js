@@ -51,7 +51,7 @@ export const Page = (props) => {
                 <meta name="twitter:image" content={props.seo.opengraphImage?.uri || ""}></meta>
             </Head>
             <div className='relative overflow-hidden w-full '>
-                <div style={{width: active ? "300px" : "0px", transition: "width 0.2s", backgroundColor: siteConfig.colors.solids.cover}} className='fixed h-screen overflow-hidden z-[50]'>
+                <div style={{width: active ? "300px" : "0px", transition: "width 0.2s", backgroundColor: siteConfig.colors.solids.cover}} className='fixed h-[200%] overflow-hidden z-[50]'>
                     <div className='pt-[100px] px-[20px]'>
 
                     {/* Mobile Menu */}
