@@ -16,15 +16,19 @@ export const Page = (props) => {
                 <title>{props.seo.title}</title>
                 <meta name='description' content={props.seo.metaDesc}></meta>
                 <link
-                rel="stylesheet"
-                type="text/css"
-                charset="UTF-8"
-                href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+                    rel="stylesheet"
+                    type="text/css"
+                    charset="UTF-8"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
                 />
+                <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-
+            awesome.min.css" rel="stylesheet" integrity="sha384-
+            wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+                    crossorigin="anonymous"></link>
                 <link
-                rel="stylesheet"
-                type="text/css"
-                href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
                 />
                 <meta property="og:url" content={`${router.asPath}`}></meta>
                 <meta property="og:type" content="website"></meta>
@@ -45,7 +49,7 @@ export const Page = (props) => {
             <MainMenu items={props.mainMenuItems} callToActionLabel={props.callToActionLabel} callToActionDestination={props.callToActionDestination}></MainMenu>
             <Analytics></Analytics>
             <ParallaxProvider>
-            <BlockRenderer items={props.mainMenuItems} blocks={props.blocks}></BlockRenderer>
+                <BlockRenderer items={props.mainMenuItems} blocks={props.blocks}></BlockRenderer>
             </ParallaxProvider>
             <Footer></Footer>
         </div>

@@ -34,16 +34,16 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
             <div style={{backgroundColor: scrollY > 100 ? `${siteConfig.colors.solids.cover}D9` : "unset"}} className={` transition-all m-auto w-full px-5`}>
                 <div className={`max-w-[1280px] mx-auto flex justify-between align-middle`}>
                     {/* Site Logo. Defined by logo.png */}
-                    <Image width={150} height={70} src={'./logo.svg'}></Image>
+                    <Image className="my-7 w-full max-[600px]:max-w-[50px]" width={150} height={70} objectFit="cover" src={'./logo.svg'}></Image>
 
                     {/* Nav Links and Call to Action  */}
-                    <div className={`flex items-center gap-4`}>
-                        <div className={`flex h-full text-center gap-12`}>
+                    <div className={`flex max-[820px]:hidden items-center gap-9`}>
+                        <div className={`flex h-full text-center gap-9`}>
                             {items.map((item) => {
                                 return (
                                 <div className="relative item flex items-center py-8">
                                     <div style={{ fontWeight: router.pathname == item.destination ? "700" : "400"}} className={`py-2 flex items-center`}>
-                                    <Link className={`link text-white flex`} id={item.id} href={item.destination}>{item.label} {item.subMenuItem.length > 0 && <FontAwesomeIcon style={{paddingLeft: '6px', paddingRight: '6px'}} color="#FFFFFF" size="xs" icon={faChevronDown} />
+                                    <Link className={`link text-white flex items-center gap-3`} id={item.id} href={item.destination}>{item.label} {item.subMenuItem.length > 0 && <FontAwesomeIcon style={{width: "12px", height: "12px"}} color={"#FFFFFF"} size="sm" icon={faChevronDown} />
                                     }</Link>
                                     </div>
                                     {item.subMenuItem.length > 0 && (
