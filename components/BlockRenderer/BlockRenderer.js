@@ -15,6 +15,11 @@ import { ListItem } from '../Core/List/ListItem'
 import Image from 'next/image'
 import { Label } from '../Custom/Label'
 import { HeadingLabel } from '../Custom/HeadingLabel'
+import { BuyingPoint } from '../Custom/BuyingPoint'
+import { ImageHighlight } from '../Custom/ImageHighlight'
+import { Carousel } from '../Custom/Carousel'
+import { CallToActionBar } from '../Custom/CallToActionBar'
+import mapACFRepeater from '../../lib/mapACFRepeater'
 
 export const BlockRenderer = ({ items, blocks }) => {
 
@@ -44,7 +49,6 @@ export const BlockRenderer = ({ items, blocks }) => {
 
             // Custom Call to Action Button
             case "acf/ctabutton": {
-                console.log(block)
                 return <CallToActionButton
                     key={block.id}
                     buttonLabel={block.attributes.data.label}
@@ -52,6 +56,44 @@ export const BlockRenderer = ({ items, blocks }) => {
                     align={block.attributes.data.align}
                     type={block.attributes.data.type}
                 ></CallToActionButton>
+            }
+
+            case "acf/call-to-action-bar": {
+                return <CallToActionBar
+                    title={block.attributes.data.title}
+                    paragraph={block.attributes.data.paragraph}
+                    image={block.attributes.data.image}
+                    button_text={block.attributes.data.button_text}
+                    button_destination={block.attributes.data.button_destination}
+                    onlineImage={block.attributes.data.online}
+                >
+
+                </CallToActionBar>
+            }
+
+            case "acf/carousel": {
+                console.log(block)
+                return <Carousel data={mapACFRepeater(block.attributes.data)}></Carousel>
+            }
+
+            case "acf/image-highlight": {
+                console.log(block)
+                return <ImageHighlight
+                    image={block.attributes.data.image.url}
+                    imageWidth={block.attributes.data.image.width}
+                    imageHeight={block.attributes.data.image.height}
+                    align={block.attributes.data.align}
+                    accent={block.attributes.data.accent_title}
+                    title={block.attributes.data.title} 
+                    paragraph={block.attributes.data.paragraph}
+                    buttonText={block.attributes.data.button_text}
+                    destination={block.attributes.data.button_destination}
+                    text_backdrop={block.attributes.data.text_background.url}
+                    text_backdropWidth={block.attributes.data.text_background.width}
+                    text_backdropHeight={block.attributes.data.text_background.height}
+                >
+
+                </ImageHighlight>
             }
 
             // Custom Call to Action Button (External Sites)
@@ -67,7 +109,6 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
 
             case "acf/heading-label": {
-                console.log(block)
                 return <HeadingLabel
                     textAlign={block.attributes.data.align}
                     content={block.attributes.data.text}
@@ -76,7 +117,15 @@ export const BlockRenderer = ({ items, blocks }) => {
 
                 </HeadingLabel>
             }
-            
+
+            case "acf/buying-point": {
+                return <BuyingPoint
+                    color={block.attributes.data?.color}
+                    description={block.attributes.data.description}
+                    number={block.attributes.data.number}
+                ></BuyingPoint>
+            }
+
             // Just a Div :)
             case "core/query": {
                 <Query key={block.id}>
@@ -128,7 +177,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                     level={block.attributes.level}
                 />
             }
-            
+
             // Page Hero: Landing page viewport
             case "core/cover": {
                 return <Cover className={block.attributes?.className} key={block.id} background={block.attributes.url}>
@@ -138,7 +187,6 @@ export const BlockRenderer = ({ items, blocks }) => {
 
             // Columns Component: Wrapper for all Columns
             case "core/columns": {
-                console.log(block)
                 return <Columns padding={block.attributes.style?.spacing?.padding} className={block.attributes?.className} key={block.id} stackOnMobile={block.attributes.isStackedOnMobile}>
                     <BlockRenderer blocks={block.innerBlocks}></BlockRenderer>
                 </Columns>
@@ -153,7 +201,15 @@ export const BlockRenderer = ({ items, blocks }) => {
 
             // Generic Group Component
             case "core/group": {
-                return <Group border={block.attributes.style?.border} padding={block.attributes.style?.spacing?.padding} className={block.attributes.className} contentSize={block.attributes.layout.contentSize} bgColor={block.attributes?.style?.color?.background} keys={block.id}>
+                return <Group 
+                    border={block.attributes.style?.border} 
+                    padding={block.attributes.style?.spacing?.padding}
+                    className={block.attributes.className} 
+                    contentSize={block.attributes.layout?.contentSize} 
+                    bgColor={block.attributes?.style?.color?.background} 
+                    justification={block.attributes?.layout?.justifyContent}
+                    radius={block.attributes?.style?.border?.radius}
+                    keys={block.id}>
                     <BlockRenderer blocks={block.innerBlocks}></BlockRenderer>
                 </Group>
             }
@@ -167,7 +223,7 @@ export const BlockRenderer = ({ items, blocks }) => {
             // Render for ALL images on website. This is important because each image must be optimized effectively to preserve fast page speeds.
             case "core/image": {
                 return (
-                    <div className={`flex align-center cursor-pointer justify-center rounded-lg overflow-hidden`}>
+                    <div className={``}>
                         <Image
                             onClick={() => setOpen(true)}
                             key={block.id}

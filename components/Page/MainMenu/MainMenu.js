@@ -8,21 +8,33 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Heading } from "../../Core/Heading";
 import { Paragraph } from "../../Core/Paragraph";
 import { Label } from "../../Custom/Label";
+import { useCallback, useEffect, useState } from "react";
 
 export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) =>
 {
     const router = useRouter();
 
-    console.log("ITEMS: ", items);
-    console.log("callToActionLabel: ", callToActionLabel);
-    console.log("callToActionDestination: ", callToActionDestination);
-    console.log(siteConfig.colors.solids.primary);
+    const [scrollY, setScrollY] = useState('');
+
+    const onScroll = useCallback(event => {
+        const { scrollY } = window;
+        setScrollY(scrollY);
+    }, []);
+  
+    useEffect(() => {
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => {
+         window.removeEventListener("scroll", onScroll, { passive: true });
+      }
+    }, []);
+  
+
     return (
-        <div className={`m-auto fixed top-0 z-[1000] left-0 shadow-md right-0 `}>
-            <div className={`primary-bg m-auto w-full px-5`} style={{ '--primary-color': siteConfig.colors.solids.primary }}>
+        <div  className={`m-auto fixed top-0 z-[1000] left-0 right-0 `}>
+            <div style={{backgroundColor: scrollY > 100 ? `${siteConfig.colors.solids.cover}D9` : "unset"}} className={` transition-all m-auto w-full px-5`}>
                 <div className={`max-w-[1280px] mx-auto flex justify-between align-middle`}>
                     {/* Site Logo. Defined by logo.png */}
-                    <Image width={200} height={70} src={'./logo.svg'}></Image>
+                    <Image width={150} height={70} src={'./logo.svg'}></Image>
 
                     {/* Nav Links and Call to Action  */}
                     <div className={`flex items-center gap-4`}>

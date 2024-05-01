@@ -25,9 +25,9 @@ export const Column = ({ children, padding, bgColor = "none", width, verticalAli
     paddingRight: padding ? padding.right : "0px"
     }} 
 
-    className={`column overflow-hidden box-border mx-auto flex ${width ? "" :"flex-1"} flex-col`}>
+    className={`${className} column overflow-hidden box-border mx-auto flex ${width ? "" :"flex-1"} flex-col`}>
         <div style={{display: 'flex', justifyContent:  layout ? layout.justifyContent : "initial"}}>
-            <div style={{maxWidth: layout ? layout.contentSize : "none"}}>
+            <div className="w-full" style={{maxWidth: layout ? layout.contentSize : "none"}}>
                 {children}
             </div>
         </div>
