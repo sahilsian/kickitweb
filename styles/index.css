@@ -36,6 +36,18 @@ html, body {
   min-width: 300px;
 }
 
+.minw200 {
+  min-width: 200px;
+}
+
+.wrapreverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flexhalf {
+  flex: 0.5;
+}
+
 .textleftimportant {
   text-align: left !important;
 }

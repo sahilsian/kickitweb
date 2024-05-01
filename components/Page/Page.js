@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Footer } from './Footer';
-import { act, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import siteConfig from '../../site.config';
 import Link from 'next/link';
 import { CallToActionButton } from '../Custom/CallToActionButton';
@@ -14,6 +14,10 @@ import { CallToActionButton } from '../Custom/CallToActionButton';
 export const Page = (props) => {
     const router = useRouter()
     const [active, setActive] = useState(false)
+
+    useEffect(()=> {
+        setActive(false)
+    }, [router.reload])
 
     return (
         <div className={`font-heading`}>
