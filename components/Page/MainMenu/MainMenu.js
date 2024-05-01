@@ -34,7 +34,7 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
             <div style={{backgroundColor: scrollY > 100 ? `${siteConfig.colors.solids.cover}D9` : "unset"}} className={` transition-all m-auto w-full px-5`}>
                 <div className={`max-w-[1280px] mx-auto flex justify-between align-middle`}>
                     {/* Site Logo. Defined by logo.png */}
-                    <Image className="my-7 max-[600px]:max-w-[50px]" width={150} height={70} objectFit="cover" src={'./logo.svg'}></Image>
+                    <Image className="my-7 " width={150} height={70} objectFit="cover" src={'./logo.svg'}></Image>
 
                     {/* Nav Links and Call to Action  */}
                     <div className={`flex max-[820px]:hidden items-center gap-9`}>
