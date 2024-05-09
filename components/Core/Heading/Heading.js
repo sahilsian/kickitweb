@@ -4,7 +4,8 @@ export const Heading = ({textAlign, className, content, textColor, level = 2, ty
     
     const tag = React.createElement(`h${level}`, {
         dangerouslySetInnerHTML: {__html: content},
-        className: ` ${textColor === "white" ? "text-white" : `text-[${textColor}]`} ${typography?.fontWeight ? `font-[${typography?.fontWeight}]` : ""} font-heading ${className} mb-8 ${getFontSizeForHeading(level)} ${getTextAlign(textAlign)}`
+        style: {color: textColor === "white" ? "#FFFFFF" : textColor},
+        className: `heading ${typography?.fontWeight ? `font-[${typography?.fontWeight}]` : ""} font-heading ${className} ${getFontSizeForHeading(level)} ${getTextAlign(textAlign)}`
     })
     return tag
 } 

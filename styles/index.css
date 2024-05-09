@@ -20,7 +20,7 @@ html, body {
 
 @layer components { 
   .btn {
-    @apply hover:opacity-80 rounded-[8px] text-center max-w-[400px] font-medium transition-all inline-block p-3 px-10 cursor-pointer text-black shadow-lg
+    @apply hover:opacity-80 rounded-[8px] text-center max-w-[300px] font-medium transition-all inline-block p-3 px-4 cursor-pointer text-black shadow-lg
   }
 
   .label {
@@ -32,6 +32,36 @@ html, body {
   }
 }
 
+.minw300 {
+  min-width: 300px;
+}
+
+.minw200 {
+  min-width: 200px;
+}
+
+.wrapreverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flexhalf {
+  flex: 0.5;
+}
+
+.stretch {
+  align-items: stretch;
+}
+
+.textleftimportant {
+  text-align: left !important;
+}
+.textcenterimportant {
+  text-align: center !important;
+}
+.textrightimportant {
+  text-align: right !important;
+}
+
 /* Menu Item Visibility */
 .subMenu {
     display: none;
@@ -39,6 +69,15 @@ html, body {
 
 .item:hover .subMenu {
     display: block;
+}
+
+.slick-track {
+    display: flex;
+    gap: 1rem;
+}
+
+.slick-dots li.slick-active button:before {
+    color:White !important;
 }
 
 .primary-bg {

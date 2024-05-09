@@ -4,34 +4,49 @@ import { CallToActionButton } from "../../Custom/CallToActionButton";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { Heading } from "../../Core/Heading";
 import { Paragraph } from "../../Core/Paragraph";
 import { Label } from "../../Custom/Label";
+import { useCallback, useEffect, useState } from "react";
 
-export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) =>
+export const MainMenu = ({ items, active, callToActionLabel, callToActionDestination, onClick }) =>
 {
     const router = useRouter();
 
-    console.log("ITEMS: ", items);
-    console.log("callToActionLabel: ", callToActionLabel);
-    console.log("callToActionDestination: ", callToActionDestination);
-    console.log(siteConfig.colors.solids.primary);
+    const [scrollY, setScrollY] = useState('');
+
+    const onScroll = useCallback(event => {
+        const { scrollY } = window;
+        setScrollY(scrollY);
+    }, []);
+  
+    useEffect(() => {
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => {
+         window.removeEventListener("scroll", onScroll, { passive: true });
+      }
+    }, []);
+  
+
     return (
-        <div className={`m-auto fixed top-0 z-[1000] left-0 shadow-md right-0 `}>
-            <div className={`primary-bg m-auto w-full px-5`} style={{ '--primary-color': siteConfig.colors.solids.primary }}>
+        <div  className={`m-auto fixed top-0 z-[1000] left-0 right-0 `}>
+            <div style={{backgroundColor: scrollY > 100 || active ? `${siteConfig.colors.solids.cover}${active ? "" : "D9"}` : "unset"}} className={` transition-all m-auto w-full px-5`}>
                 <div className={`max-w-[1280px] mx-auto flex justify-between align-middle`}>
+
                     {/* Site Logo. Defined by logo.png */}
-                    <Image width={200} height={70} src={'./logo.svg'}></Image>
+                    <Link href={"/"}>
+                    <Image className="my-7 max-[960px]:max-w-[100px]" width={200} height={63} objectFit="cover" src={'/logo.png'}></Image>
+                    </Link>
 
                     {/* Nav Links and Call to Action  */}
-                    <div className={`flex items-center gap-4`}>
-                        <div className={`flex h-full text-center gap-12`}>
+                    <div className={`flex max-[820px]:hidden items-center gap-9`}>
+                        <div className={`flex h-full text-center gap-9`}>
                             {items.map((item) => {
                                 return (
                                 <div className="relative item flex items-center py-8">
                                     <div style={{ fontWeight: router.pathname == item.destination ? "700" : "400"}} className={`py-2 flex items-center`}>
-                                    <Link className={`link text-white flex`} id={item.id} href={item.destination}>{item.label} {item.subMenuItem.length > 0 && <FontAwesomeIcon style={{paddingLeft: '6px', paddingRight: '6px'}} color="#FFFFFF" size="xs" icon={faChevronDown} />
+                                    <Link className={`link text-white flex items-center gap-3`} id={item.id} href={item.destination}>{item.label} {item.subMenuItem.length > 0 && <FontAwesomeIcon style={{width: "12px", height: "12px"}} color={"#FFFFFF"} size="sm" icon={faChevronDown} />
                                     }</Link>
                                     </div>
                                     {item.subMenuItem.length > 0 && (
@@ -67,6 +82,11 @@ export const MainMenu = ({ items, callToActionLabel, callToActionDestination }) 
                         <div>
                             <CallToActionButton destination={callToActionDestination} buttonLabel={callToActionLabel} type="secondary"></CallToActionButton>
                         </div>
+                    </div>
+
+                    {/* Mobile Header Button */}
+                    <div className="my-7 cursor-pointer min-[820px]:hidden" onClick={onClick}>
+                    <FontAwesomeIcon className="hover:opacity-80 transition-all" style={{width: "24px", height: "24px"}} color={"#FFFFFF"} size="sm" icon={faBars} />
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ const siteConfig = {
             accent: '#F63D3D', // Accent color for highlights, etc.
             error: '#dc3545', // Error color for validation messages, etc.
             success: '#28a745', // Success color for success messages, etc.
-            cover: '#093263'
+            cover: '#0c1524'
         },
         texts: {
             primary: '#FFFFFF',

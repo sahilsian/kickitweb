@@ -5,17 +5,21 @@ import siteConfig from "../../../site.config";
 
 export const Cover = ({children, background, className}) => {
     const router = useRouter()
-    const parallax = useParallax({
-        speed: -12,
+    const parallaxColumns = useParallax({
+        speed: -9,
       });
+
+    const parallaxImage = useParallax({
+    speed: 5,
+    });
     return (
-        <div style={{ '--primary-color': siteConfig.colors.solids.primary }} className={`${className} primary-bg min-h-[720px] h-screen relative flex items-center`}>
-            <div ref={parallax.ref} className={`w-full z-20 py-[150px]`}>
+        <div style={{ '--primary-color': siteConfig.colors.solids.primary }} className={`${className} primary-bg min-h-[720px] overflow-hidden h-screen relative flex`}>
+            <div ref={parallaxColumns.ref} className={`w-full z-20 pt-[120px] md:pt-[200px] lg:pt-[200px]`}>
             {children}
             </div>
-            <div className={`w-full min-h-screen h-full absolute`}>
-                <div style={{ '--cover-color': siteConfig.colors.solids.cover }}  className="w-full cover-bg  opacity-[80%] mix-blend-multiply h-full absolute z-10"></div>
-                <Image alt="Cover" src={background} fill className=' object-cover w-full h-screen top-0' />
+            <div className={`w-[110%] h-[110%] top-[-20px] absolute`}>
+                <div style={{ '--cover-color': siteConfig.colors.solids.cover }}  className="w-full cover-bg opacity-[80%] h-full absolute z-10"></div>
+                <Image ref={parallaxImage.ref} alt="Cover" src={background} objectFit="cover" fill className='absolute' />
             </div>
 
         </div>
