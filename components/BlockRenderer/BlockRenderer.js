@@ -13,14 +13,15 @@ import { Services } from '../Custom/Services'
 import { GravityFormsComponent } from '../GravityForms/GravityFormsField'
 import { List } from '../Core/List'
 import { ListItem } from '../Core/List/ListItem'
-import Image from 'next/image'
 import { Label } from '../Custom/Label'
 import { HeadingLabel } from '../Custom/HeadingLabel'
 import { BuyingPoint } from '../Custom/BuyingPoint'
 import { ImageHighlight } from '../Custom/ImageHighlight'
 import { Carousel } from '../Custom/Carousel'
 import { CallToActionBar } from '../Custom/CallToActionBar'
+import { PricingBlock } from '../Custom/PricingBlock'
 import mapACFRepeater from '../../lib/mapACFRepeater'
+import Image from 'next/image'
 
 export const BlockRenderer = ({ items, blocks }) => {
 
@@ -84,7 +85,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                     imageHeight={block.attributes.data.image.height}
                     align={block.attributes.data.align}
                     accent={block.attributes.data.accent_title}
-                    title={block.attributes.data.title} 
+                    title={block.attributes.data.title}
                     paragraph={block.attributes.data.paragraph}
                     buttonText={block.attributes.data.button_text}
                     destination={block.attributes.data.button_destination}
@@ -99,6 +100,21 @@ export const BlockRenderer = ({ items, blocks }) => {
             case "acf/services": {
                 console.log(block.attributes.data)
                 return <Services data={mapACFRepeater(block.attributes.data)}></Services>
+            }
+
+            case "acf/pricing-block": {
+                console.log(block.attributes.data)
+                return <PricingBlock
+                    button_destination={block.attributes.data.button_destination}
+                    title={block.attributes.data.title}
+                    price={block.attributes.data.price}
+                    description={block.attributes.data.description}
+                    discount={block.attributes.data.discount}
+                    button_text={block.attributes.data.button_text}
+                    checklist={mapACFRepeater(block.attributes.data)}
+                >
+
+                </PricingBlock>
             }
 
             // Custom Call to Action Button (External Sites)
@@ -206,12 +222,12 @@ export const BlockRenderer = ({ items, blocks }) => {
 
             // Generic Group Component
             case "core/group": {
-                return <Group 
-                    border={block.attributes.style?.border} 
+                return <Group
+                    border={block.attributes.style?.border}
                     padding={block.attributes.style?.spacing?.padding}
-                    className={block.attributes.className} 
-                    contentSize={block.attributes.layout?.contentSize} 
-                    bgColor={block.attributes?.style?.color?.background} 
+                    className={block.attributes.className}
+                    contentSize={block.attributes.layout?.contentSize}
+                    bgColor={block.attributes?.style?.color?.background}
                     justification={block.attributes?.layout?.justifyContent}
                     radius={block.attributes?.style?.border?.radius}
                     keys={block.id}>
