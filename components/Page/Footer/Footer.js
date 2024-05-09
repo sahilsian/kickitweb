@@ -3,7 +3,7 @@ import { faFacebook, faInstagram, faTiktok, faTwitter, faYoutube } from "@fortaw
 import Image from "next/image"
 import Link from "next/link"
 
-export const Footer = ({ items, data }) => {
+export const Footer = ({ items }) => {
     return (
         <></>
     )
