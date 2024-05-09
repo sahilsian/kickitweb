@@ -31,7 +31,7 @@ export const CallToActionBar = ({title, paragraph, image, button_text, button_de
                 
             </div>
             <div className="flex-1 min-w-[250px] flex justify-center items-center">
-                <Image width={image.width} height={image.height} src={image.url}></Image>
+                {/* <Image width={image.width} height={image.height} src={image.url}></Image> */}
             </div>
         </div>
     )

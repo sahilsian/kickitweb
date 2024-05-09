@@ -60,7 +60,6 @@ export const Page = (props) => {
 
                     {/* Mobile Menu */}
                     {props.mainMenuItems.map((item) => {
-                        console.log(item)
                         return (
                             <div>
                             <div style={{opacity: active ? "100" : "0", transition: '0.3s opacity ease'}} className='text-white'>

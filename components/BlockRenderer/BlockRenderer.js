@@ -9,6 +9,7 @@ import { Spacer } from '../Core/Spacer'
 import { Gallery } from '../Core/Gallery'
 import { Query } from '../Core/Query'
 import { Group } from '../Core/Group'
+import { Services } from '../Custom/Services'
 import { GravityFormsComponent } from '../GravityForms/GravityFormsField'
 import { List } from '../Core/List'
 import { ListItem } from '../Core/List/ListItem'
@@ -72,12 +73,11 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
 
             case "acf/carousel": {
-                console.log(block)
+                console.log(block.attributes.data)
                 return <Carousel data={mapACFRepeater(block.attributes.data)}></Carousel>
             }
 
             case "acf/image-highlight": {
-                console.log(block)
                 return <ImageHighlight
                     image={block.attributes.data.image.url}
                     imageWidth={block.attributes.data.image.width}
@@ -94,6 +94,11 @@ export const BlockRenderer = ({ items, blocks }) => {
                 >
 
                 </ImageHighlight>
+            }
+
+            case "acf/services": {
+                console.log(block.attributes.data)
+                return <Services data={mapACFRepeater(block.attributes.data)}></Services>
             }
 
             // Custom Call to Action Button (External Sites)

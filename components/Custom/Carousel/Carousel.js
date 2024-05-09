@@ -44,7 +44,6 @@ export const Carousel = ({ data }) => {
         <div className="slider-container mx-auto max-w-[1280px] p-4">
         <Slider {...settings}>
           {data.map((item) => {
-            console.log(item)
             return (
                 <div>
                     <CarouselItem subtitle={item.subtitle} description={item.description} title={item.title} image={item.image}>

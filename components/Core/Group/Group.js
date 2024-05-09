@@ -8,8 +8,8 @@ export const Group = ({ children, bgColor, contentSize, padding, className="grou
     }
 
     return (
-        <div className={`parent-group flex w-full`} style={{justifyContent: justify[justification]}}>
-            <div className={`group ${className} w-full overflow-auto box-border`} 
+        <div className={`parent-group flex w-full h-full`} style={{justifyContent: justify[justification]}}>
+            <div className={`group ${className} w-full h-full overflow-auto box-border`} 
             style={{
                 backgroundColor: bgColor, 
                 maxWidth: contentSize, 

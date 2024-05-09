@@ -48,6 +48,10 @@ html, body {
   flex: 0.5;
 }
 
+.stretch {
+  align-items: stretch;
+}
+
 .textleftimportant {
   text-align: left !important;
 }
