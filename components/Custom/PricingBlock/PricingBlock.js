@@ -9,7 +9,7 @@ export const PricingBlock = ({button_destination, title, price, description, dis
     return (
         <div className="w-full border-2 border-blue-500 rounded-xl">
             <div className="w-full max-w-[600px] mx-auto">
-                <div className=" max-w-[300px] mx-auto flex rounded-full bg-black w-full p-[3px]">
+                <div className="m-5 max-w-[300px] mx-auto flex rounded-full bg-black w-full p-[3px]">
                     <div style={{backgroundColor: !yearly ? siteConfig.colors.solids.primary : "unset"}} onClick={()=>{setYearly(false)}} className="cursor-pointer flex-[1] font-bold text-white px-6 py-3 text-center rounded-full transition-all">
                         Monthly
                     </div>
@@ -21,14 +21,14 @@ export const PricingBlock = ({button_destination, title, price, description, dis
                     <span className="font-normal">
                         {!yearly ? 
                         <span className="font-bold text-6xl">${price}<span className=" font-thin text-sm">/Month </span></span> 
-                        : <span className="font-bold text-6xl">${price}<span className="font-thin text-sm">/Year</span></span>}
+                        : <span className="font-bold text-6xl">${(price*12)-((price*12) * discount)}<span className="font-thin text-sm">/Year</span></span>}
                         </span>
                 </div>
                 <div>
                     <div className="text-center m-2 font-bold text-xl"><h5>{title}</h5></div>
                 </div>
                 <div>
-                <div className="text-center m-2 font-normal"><h5>{description}</h5></div>
+                    <div className="text-center m-2 font-normal"><h5>{description}</h5></div>
                 </div>
                 <div>
                     {checklist.map((item) => {
