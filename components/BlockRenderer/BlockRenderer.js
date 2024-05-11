@@ -19,6 +19,7 @@ import { BuyingPoint } from '../Custom/BuyingPoint'
 import { ImageHighlight } from '../Custom/ImageHighlight'
 import { Carousel } from '../Custom/Carousel'
 import { CallToActionBar } from '../Custom/CallToActionBar'
+import { Tile } from '../Custom/Tile'
 import { PricingBlock } from '../Custom/PricingBlock'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
@@ -73,6 +74,19 @@ export const BlockRenderer = ({ items, blocks }) => {
                 </CallToActionBar>
             }
 
+
+            case "acf/tile": {
+                console.log(block);
+                return <Tile
+                    title={block.attributes.data.title}
+                    text={block.attributes.data.text}
+                    buttonText={block.attributes.data.buttonText}
+                    colour={block.attributes.data.color}
+                >
+                </Tile>
+            }
+
+            
             case "acf/carousel": {
                 console.log(block.attributes.data)
                 return <Carousel data={mapACFRepeater(block.attributes.data)}></Carousel>
