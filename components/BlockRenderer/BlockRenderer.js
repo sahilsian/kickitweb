@@ -80,8 +80,9 @@ export const BlockRenderer = ({ items, blocks }) => {
                 return <Tile
                     title={block.attributes.data.title}
                     text={block.attributes.data.text}
-                    buttonText={block.attributes.data.buttonText}
-                    colour={block.attributes.data.color}
+                    buttonText={block.attributes.data.buttontext}
+                    colour={block.attributes.data.colour}
+                    textColour={block.attributes.data.textcolour}
                 >
                 </Tile>
             }
