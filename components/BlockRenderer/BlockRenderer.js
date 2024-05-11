@@ -83,6 +83,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                     buttonText={block.attributes.data.buttontext}
                     colour={block.attributes.data.colour}
                     textColour={block.attributes.data.textcolour}
+                    buttonDestination={block.attributes.data.buttondestination}
                 >
                 </Tile>
             }
