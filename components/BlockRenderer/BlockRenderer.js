@@ -20,6 +20,7 @@ import { ImageHighlight } from '../Custom/ImageHighlight'
 import { Carousel } from '../Custom/Carousel'
 import { CallToActionBar } from '../Custom/CallToActionBar'
 import { PricingBlock } from '../Custom/PricingBlock'
+import { Features } from '../Custom/Features'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
@@ -76,6 +77,11 @@ export const BlockRenderer = ({ items, blocks }) => {
             case "acf/carousel": {
                 console.log(block.attributes.data)
                 return <Carousel data={mapACFRepeater(block.attributes.data)}></Carousel>
+            }
+
+            case "acf/features": {
+                console.log(block.attributes.data)
+                return <Features mainTitle={block.attributes.data.maintitle} featuresArray={mapACFRepeater(block.attributes.data)} color={block.attributes.data.color} ></Features>
             }
 
             case "acf/image-highlight": {
