@@ -1,7 +1,7 @@
 import { useState } from "react";
 import siteConfig from "../../../site.config";
 import Image from "next/image";
-import { CallToActionButton } from "../../Custom/CallToActionButton";;
+import { CallToActionButton } from "../../Custom/CallToActionButton";
 
 export const PricingBlock = ({button_destination, title, price, description, discount, button_text, checklist}) => {
     const [yearly, setYearly] = useState(false)
