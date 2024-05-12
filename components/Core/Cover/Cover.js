@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { useParallax } from "react-scroll-parallax";
 import siteConfig from "../../../site.config";
 
+
 export const Cover = ({children, background, className}) => {
     const router = useRouter()
     const parallaxColumns = useParallax({
@@ -13,8 +14,8 @@ export const Cover = ({children, background, className}) => {
     speed: 5,
     });
     return (
-        <div style={{ '--primary-color': siteConfig.colors.solids.primary }} className={`${className} primary-bg min-h-[720px] overflow-hidden h-screen relative flex`}>
-            <div ref={parallaxColumns.ref} className={`w-full z-20 pt-[120px] md:pt-[200px] lg:pt-[200px]`}>
+        <div style={{ '--primary-color': siteConfig.colors.solids.primary }} className={`${className} primary-bg overflow-hidden h-[820px] relative flex`}>
+            <div ref={parallaxColumns.ref} className={`w-full z-20 pt-[120px] md:pt-[200px] lg:pt-[170px]`}>
             {children}
             </div>
             <div className={`w-[110%] h-[110%] top-[-20px] absolute`}>

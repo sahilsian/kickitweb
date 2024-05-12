@@ -7,9 +7,9 @@ export const PricingBlock = ({button_destination, title, price, description, dis
     const [yearly, setYearly] = useState(false)
 
     return (
-        <div className="w-full border-2 border-blue-500 rounded-xl">
-            <div className="w-full max-w-[600px] mx-auto">
-                <div className="m-5 max-w-[300px] mx-auto flex rounded-full bg-black w-full p-[3px]">
+        <div style={{borderColor: siteConfig.colors.solids.primary}} className="max-w-[600px] w-full border-2 rounded-xl">
+            <div className="w-full p-5">
+                <div className="max-w-[300px] mx-auto flex rounded-full bg-black w-full p-[3px]">
                     <div style={{backgroundColor: !yearly ? siteConfig.colors.solids.primary : "unset"}} onClick={()=>{setYearly(false)}} className="cursor-pointer flex-[1] font-bold text-white px-6 py-3 text-center rounded-full transition-all">
                         Monthly
                     </div>
@@ -17,49 +17,54 @@ export const PricingBlock = ({button_destination, title, price, description, dis
                         Yearly<span className=" font-normal"> Save {100 * discount}%</span>
                     </div>
                 </div>
-                <div className=" text-center m-1" onClick={()=>{setYearly(false)}}>
+                <div className=" text-center" onClick={()=>{setYearly(false)}}>
                     <span className="font-normal">
                         {!yearly ? 
-                        <span className="font-bold text-6xl">${price}<span className=" font-thin text-sm">/Month </span></span> 
-                        : <span className="font-bold text-6xl">${(price*12)-((price*12) * discount)}<span className="font-thin text-sm">/Year</span></span>}
+                        <span className="font-bold text-[4.2rem]">${price}<span className=" font-thin text-sm">/ Month </span></span> 
+                        : <span className="font-bold text-6xl">${(price*12)-((price*12) * discount)}<span className="font-thin text-sm">/ Year</span></span>}
                         </span>
                 </div>
                 <div>
-                    <div className="text-center m-2 font-bold text-xl"><h5>{title}</h5></div>
+                    <div className="text-center m-2 font-bold text-[2rem]"><h5>{title}</h5></div>
                 </div>
                 <div>
-                    <div className="text-center m-2 font-normal"><h5>{description}</h5></div>
+                    <div className="text-center mb-8 font-normal"><h5>{description}</h5></div>
                 </div>
-                <div>
+                <div className="mb-8">
                     {checklist.map((item) => {
                         console.log(item)
                         return (
-                            <div className="flex justify-between m-2">
+                            <div className="flex justify-between m-2 font-semibold">
                                 <p>{item.title}</p>
                                 {item.check_present == 1 ? 
+                                <div className="max-w-[22px]">
+                                
                                 <Image 
                                 objectFit="contain"
                                 src="/checkbox.png"
-                                width={23}
-                                height={23}
+                                width={100}
+                                height={100}
                                 alt="Checkbox image"
                                 /> 
+                                </div>
                                 :
+                                <div className="max-w-[22px]">
                                 <Image 
                                 objectFit="contain"
                                 src="/Xmark.png"
-                                width={23}
-                                height={23}
+                                width={100}
+                                height={100}
                                 alt="Xmark image"
                                 />
+                                </div>
                                 }
                             </div>
                         )
                     })
                     }
                 </div>
-                <div className="mx-auto flex m-20 justify-center">
-                    <CallToActionButton destination={button_destination} buttonLabel={button_text} type="primary"></CallToActionButton>
+                <div className="mx-auto flex justify-center">
+                    <CallToActionButton destination={button_destination} align="center" buttonLabel={button_text} type="primary"></CallToActionButton>
                 </div>
             </div>
         </div>

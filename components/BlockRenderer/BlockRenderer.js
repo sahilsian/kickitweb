@@ -22,6 +22,7 @@ import { CallToActionBar } from '../Custom/CallToActionBar'
 import { Tile } from '../Custom/Tile'
 import { PricingBlock } from '../Custom/PricingBlock'
 import { Features } from '../Custom/Features'
+import { ScrollingBullets } from '../Custom/ScrollingBullets'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
@@ -159,6 +160,12 @@ export const BlockRenderer = ({ items, blocks }) => {
                 >
 
                 </HeadingLabel>
+            }
+
+            case "acf/scrolling-bullets": {
+                return <ScrollingBullets bullets={mapACFRepeater(block.attributes.data)}>
+
+                </ScrollingBullets>
             }
 
             case "acf/buying-point": {

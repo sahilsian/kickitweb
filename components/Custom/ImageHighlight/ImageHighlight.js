@@ -30,7 +30,7 @@ export const ImageHighlight = ({image, imageWidth, imageHeight, align, accent, t
                 </div>
             </div>
             <div className="absolute top-0 w-full h-full">
-                <div className="max-w-[1280px] max-[970px]:justify-center mx-auto w-full h-full flex relative items-center">
+                <div className="max-w-[1400px] max-[970px]:justify-center mx-auto w-full h-full flex relative items-center">
                     <div className="flex relative items-center w-full h-full max-w-[600px] max-[970px]:m-4 max-[1280px]:max-w-[400px] ">
                         <div className="absolute max-[970px]:hidden left-0">
                             <Image width={text_backdropWidth} height={text_backdropHeight} src={text_backdrop}></Image>
