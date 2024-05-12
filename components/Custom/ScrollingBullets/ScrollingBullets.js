@@ -21,6 +21,7 @@ export const ScrollingBullets = ({ bullets }) => {
 
     return (
         <div style={{backgroundColor: siteConfig.colors.solids.primary}} className="py-7">
+            {/* hello world */}
             <Slider {...settings}>
             
             {bullets.map((item)=> {
