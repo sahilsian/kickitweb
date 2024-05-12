@@ -8,7 +8,7 @@ export const Footer = ({ items }) => {
     return (
         <div>
 
-            <div className="flex w-full flex-wrap max-w-[1280px] gap-9 py-[150px] mx-auto p-5">
+            <div className="flex w-full flex-wrap max-w-[1400px] gap-9 py-[150px] mx-auto p-5">
                 <div className="flex-1 min-w-[300px]">
                     <Link href={"/"}>
                     <Image className="my-7" width={200} height={63} objectFit="cover" src={'/alt-logo.png'}></Image>
@@ -41,7 +41,7 @@ export const Footer = ({ items }) => {
                 </div>
             </div>
             <div className="p-3" style={{backgroundColor: siteConfig.colors.solids.primary}}>
-                <div className="flex w-full  text-white font-bold max-w-[1280px] mx-auto justify-between p-5">
+                <div className="flex w-full  text-white font-bold max-w-[1400px] mx-auto justify-between p-5">
                     <div>
                         <h4 className="">© 2024 Kickit Web Design</h4>
                     </div>

@@ -20,7 +20,12 @@ import { ImageHighlight } from '../Custom/ImageHighlight'
 import { Highlights } from '../Custom/Highlights'
 import { Carousel } from '../Custom/Carousel'
 import { CallToActionBar } from '../Custom/CallToActionBar'
+import { Tile } from '../Custom/Tile'
 import { PricingBlock } from '../Custom/PricingBlock'
+import { ImageText } from '../Custom/ImageText'
+import { Features } from '../Custom/Features'
+import { ScrollingBullets } from '../Custom/ScrollingBullets'
+import { MiniCover } from '../Custom/MiniCover'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
@@ -74,9 +79,29 @@ export const BlockRenderer = ({ items, blocks }) => {
                 </CallToActionBar>
             }
 
+
+            case "acf/tile": {
+                console.log(block);
+                return <Tile
+                    title={block.attributes.data.title}
+                    text={block.attributes.data.text}
+                    buttonText={block.attributes.data.buttontext}
+                    colour={block.attributes.data.colour}
+                    textColour={block.attributes.data.textcolour}
+                    buttonDestination={block.attributes.data.buttondestination}
+                >
+                </Tile>
+            }
+
+            
             case "acf/carousel": {
                 console.log(block.attributes.data)
                 return <Carousel data={mapACFRepeater(block.attributes.data)}></Carousel>
+            }
+
+            case "acf/features": {
+                console.log(block.attributes.data)
+                return <Features mainTitle={block.attributes.data.maintitle} featuresArray={mapACFRepeater(block.attributes.data)} color={block.attributes.data.color} ></Features>
             }
 
             case "acf/image-highlight": {
@@ -103,6 +128,16 @@ export const BlockRenderer = ({ items, blocks }) => {
                 return <Services data={mapACFRepeater(block.attributes.data)}></Services>
             }
 
+            case "acf/minicover": {
+                return (
+                    <MiniCover 
+                        image={block.attributes.data.image}
+                        title={block.attributes.data.title}
+                        description={block.attributes.data.description}
+                    ></MiniCover>
+                )
+            }
+
             case "acf/pricing-block": {
                 console.log(block.attributes.data)
                 return <PricingBlock
@@ -116,6 +151,20 @@ export const BlockRenderer = ({ items, blocks }) => {
                 >
 
                 </PricingBlock>
+            }
+
+            case "acf/image-text": {
+                console.log(block.attributes.data)
+                return <ImageText
+                    title={block.attributes.data.title}
+                    header={block.attributes.data.header}
+                    description={block.attributes.data.description}
+                    button_text={block.attributes.data.button_text}
+                    destination={block.attributes.data.link_destination}
+                    image={block.attributes.data.image}
+                >
+
+                </ImageText>
             }
 
             // Custom Call to Action Button (External Sites)
@@ -138,6 +187,12 @@ export const BlockRenderer = ({ items, blocks }) => {
                 >
 
                 </HeadingLabel>
+            }
+
+            case "acf/scrolling-bullets": {
+                return <ScrollingBullets bullets={mapACFRepeater(block.attributes.data)}>
+
+                </ScrollingBullets>
             }
 
             case "acf/buying-point": {
