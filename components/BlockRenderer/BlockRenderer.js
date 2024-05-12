@@ -17,6 +17,7 @@ import { Label } from '../Custom/Label'
 import { HeadingLabel } from '../Custom/HeadingLabel'
 import { BuyingPoint } from '../Custom/BuyingPoint'
 import { ImageHighlight } from '../Custom/ImageHighlight'
+import { Highlights } from '../Custom/Highlights'
 import { Carousel } from '../Custom/Carousel'
 import { CallToActionBar } from '../Custom/CallToActionBar'
 import { PricingBlock } from '../Custom/PricingBlock'
@@ -152,6 +153,16 @@ export const BlockRenderer = ({ items, blocks }) => {
                 <Query key={block.id}>
                     <BlockRenderer blocks={block.innerBlocks}></BlockRenderer>
                 </Query>
+            }
+
+            case "acf/highlights": {
+                console.log(block);
+               return  <Highlights
+                    title_heading = {block.attributes.data.title_heading}
+                    title_explanation = {block.attributes.data.title_explanation}
+                    checklist_descriptions = {mapACFRepeater(block.attributes.data)}
+                    image_area = {block.attributes.data.image_area}
+                ></Highlights>
             }
 
             // Gallery Component for Images Stacked ontop of Eachother
