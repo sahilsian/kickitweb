@@ -21,6 +21,7 @@ import { Carousel } from '../Custom/Carousel'
 import { CallToActionBar } from '../Custom/CallToActionBar'
 import { Tile } from '../Custom/Tile'
 import { PricingBlock } from '../Custom/PricingBlock'
+import { ImageText } from '../Custom/ImageText'
 import { Features } from '../Custom/Features'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
@@ -137,6 +138,20 @@ export const BlockRenderer = ({ items, blocks }) => {
                 >
 
                 </PricingBlock>
+            }
+
+            case "acf/image-text": {
+                console.log(block.attributes.data)
+                return <ImageText
+                    title={block.attributes.data.title}
+                    header={block.attributes.data.header}
+                    description={block.attributes.data.description}
+                    button_text={block.attributes.data.button_text}
+                    destination={block.attributes.data.link_destination}
+                    image={block.attributes.data.image}
+                >
+
+                </ImageText>
             }
 
             // Custom Call to Action Button (External Sites)
