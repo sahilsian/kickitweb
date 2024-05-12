@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import siteConfig from "../../../site.config"
 
-export const Footer = ({ items, data }) => {
+export const Footer = ({ items }) => {
     return (
         <div>
 
