@@ -23,6 +23,7 @@ import { Tile } from '../Custom/Tile'
 import { PricingBlock } from '../Custom/PricingBlock'
 import { Features } from '../Custom/Features'
 import { ScrollingBullets } from '../Custom/ScrollingBullets'
+import { MiniCover } from '../Custom/MiniCover'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
@@ -123,6 +124,16 @@ export const BlockRenderer = ({ items, blocks }) => {
             case "acf/services": {
                 console.log(block.attributes.data)
                 return <Services data={mapACFRepeater(block.attributes.data)}></Services>
+            }
+
+            case "acf/minicover": {
+                return (
+                    <MiniCover 
+                        image={block.attributes.data.image}
+                        title={block.attributes.data.title}
+                        description={block.attributes.data.description}
+                    ></MiniCover>
+                )
             }
 
             case "acf/pricing-block": {
