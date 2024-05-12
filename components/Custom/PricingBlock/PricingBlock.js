@@ -32,16 +32,27 @@ export const PricingBlock = ({button_destination, title, price, description, dis
                 </div>
                 <div>
                     {checklist.map((item) => {
+                        console.log(item)
                         return (
                             <div className="flex justify-between m-2">
                                 <p>{item.title}</p>
-                                <Image
+                                {item.check_present == 1 ? 
+                                <Image 
                                 objectFit="contain"
                                 src="/checkbox.png"
                                 width={23}
                                 height={23}
                                 alt="Checkbox image"
+                                /> 
+                                :
+                                <Image 
+                                objectFit="contain"
+                                src="/Xmark.png"
+                                width={23}
+                                height={23}
+                                alt="Xmark image"
                                 />
+                                }
                             </div>
                         )
                     })
