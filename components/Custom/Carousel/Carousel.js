@@ -41,7 +41,7 @@ export const Carousel = ({ data }) => {
     };
 
     return (
-        <div className="slider-container mx-auto max-w-[1280px] p-4">
+        <div className="slider-container mx-auto max-w-[1400px] p-4">
         <Slider {...settings}>
           {data.map((item) => {
             return (
