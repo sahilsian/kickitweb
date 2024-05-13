@@ -129,11 +129,15 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
 
             case "acf/minicover": {
+                console.log(block)
                 return (
                     <MiniCover 
                         image={block.attributes.data.image}
                         title={block.attributes.data.title}
                         description={block.attributes.data.description}
+                        showbutton={block.attributes.data.showbutton}
+                        buttondestination={block.attributes.data.buttondestination}
+                        buttontext={block.attributes.data.buttontext}
                     ></MiniCover>
                 )
             }
