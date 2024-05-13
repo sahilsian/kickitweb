@@ -32,6 +32,13 @@ html, body {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .mobilehidden {
+    display: none;
+  }
+}
+
+
 .minw300 {
   min-width: 300px;
 }
