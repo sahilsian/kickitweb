@@ -25,6 +25,7 @@ export const Page = (props) => {
                 <link rel="icon" type="image/x-icon" href="/favicon/favicon.png"></link>
                 <title>{props.seo.title}</title>
                 <meta name='description' content={props.seo.metaDesc}></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></meta>
                 <link
                     rel="stylesheet"
                     type="text/css"
