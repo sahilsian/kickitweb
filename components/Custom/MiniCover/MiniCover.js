@@ -22,14 +22,15 @@ export const MiniCover = ({ image, title, description }) => {
                 </div>
             </div>
             <div style={{ '--cover-color': siteConfig.colors.solids.cover }}  className="w-full cover-bg opacity-[80%] h-full absolute z-10"></div>
+            <div className="absolute w-[100%] h-[150%]">
             <Image
                 ref={parallaxImage.ref}
                 src={image.url}
-                width={image.width}
-                height={image.height}
-                objectFit="cover"
-                style={{top: "-100px", position: "absolute"}}
+                fill
+                objectFit="Cover"
+                style={{position: "absolute"}}
             ></Image>
+            </div>
         </div>
     )
 }
