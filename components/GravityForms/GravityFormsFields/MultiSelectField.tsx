@@ -70,7 +70,7 @@ export default function MultiSelectField({ field, fieldErrors }: Props) {
   return (
     
     <div className={`gfield  mb-3 gfield-${type} ${cssClass}`.trim()}>
-      <label className="label text-white text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " (Optional)"}`}</label>
+      <label className="label text-white text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
       <Select
         isMulti
         name={String(id)}

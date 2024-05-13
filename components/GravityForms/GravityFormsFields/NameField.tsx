@@ -96,7 +96,7 @@ export default function NameField({ field, fieldErrors }: Props) {
         return (
           !input.isHidden && 
           <div className="w-full" key={key}>
-            <label className="label text-left" htmlFor={`input_${formId}_${id}_${key}`}>{`${inputLabel} ${isRequired ? " *" : " (Optional)"}`}</label>
+            <label className="label text-left" htmlFor={`input_${formId}_${id}_${key}`}>{`${inputLabel} ${isRequired ? " *" : " "}`}</label>
             <Input
               type="text"
               name={String(key)}

@@ -65,7 +65,7 @@ export default function AddressField({ field, fieldErrors }: Props) {
 
   return (
     <fieldset id={htmlId} className={`gfield w-full grid grid-cols-2 justify-evenly gap-4 gfield-${type} ${cssClass}`.trim()}>
-      <legend className="text-sm font-[400] mb-3">{label} {isRequired ? " *" : " (Optional)"}</legend>
+      <legend className="text-sm font-[400] mb-3">{label} {isRequired ? " *" : " "}</legend>
       {inputs?.map(input => {
         const key = input?.key as keyof AddressInput;
         const inputLabel = input?.customLabel || '';

@@ -31,7 +31,7 @@ export default function PhoneField({ field, fieldErrors }: Props) {
 
   return (
     <div className={`gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="label text-white text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " (Optional)"}`}</label>
+      <label className="label text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
       <Input
         type="tel"
         name={String(id)}

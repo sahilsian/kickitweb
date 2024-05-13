@@ -30,7 +30,7 @@ export default function DateField({ field, fieldErrors }: Props) {
 
   return (
     <div className={`gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " (Optional)"}`}</label>
+      <label className="text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
       <input
         type="date"
         name={String(id)}

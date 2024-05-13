@@ -48,13 +48,13 @@ export default function SelectField({ field, fieldErrors }: Props) {
 
   return (
     <div className={`select gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${Boolean(isRequired) ? " *" : ""}`}</label>
+      <label className="text-left label " htmlFor={htmlId}>{`${label} ${Boolean(isRequired) ? " *" : ""}`}</label>
       <select
         name={String(id)}
         id={htmlId}
         required={Boolean(isRequired)}
         value={value}
-        className="w-full text-sm bg-white rounded-lg px-5 py-3 border-b-2"
+        className="w-full text-sm rounded-lg px-5 py-3 border-b-2"
         onChange={event => {
           dispatch({
             type: ACTION_TYPES.updateSelectFieldValue,
