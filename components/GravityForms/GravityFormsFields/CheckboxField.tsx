@@ -56,9 +56,9 @@ export default function CheckboxField({ field, fieldErrors }: Props) {
 
   return (
     <fieldset id={htmlId} className={`gfield text-left mb-3 gfield-${type} ${cssClass}`.trim()}>
-      <legend className="text-left text-white label mb-3 text-sm">{`${label} ${isRequired ? " *" : " (Optional)"}`}</legend>
+      <legend className="text-left label mb-3">{`${label} ${isRequired ? " *" : " "}`}</legend>
       {checkboxInputs.map(({ id: inputId, text, value }) =>
-        <div key={inputId}>
+        <div key={inputId} className="py-1">
           <input
             type="checkbox"
             name={String(inputId)}
@@ -67,7 +67,7 @@ export default function CheckboxField({ field, fieldErrors }: Props) {
             value={String(value)}
             onChange={handleChange}
           />
-          <label className="pl-4 text-white text-sm" htmlFor={`input_${id}_${inputId}`}>{text}</label>
+          <label className="pl-4 text-lg" htmlFor={`input_${id}_${inputId}`}>{text}</label>
         </div>
       )}
       {description ? <p className="field-description">{description}</p> : null}

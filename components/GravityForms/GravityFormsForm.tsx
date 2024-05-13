@@ -6,6 +6,7 @@ import GravityFormsField from "./GravityFormsField";
 import { useEffect, useState } from "react";
 import Router from "next/router";
 import { sendGTMEvent } from '@next/third-parties/google'
+import siteConfig from "../../site.config";
 
 const SUBMIT_FORM = gql`
   mutation submitForm($formId: Int!, $fieldValues: [FieldValuesInput]) {
@@ -80,7 +81,7 @@ export default function GravityFormsForm({ form, id }: Props) {
       )
       }
       
-      <button className="btn-submit" type="submit">
+      <button style={{backgroundColor: siteConfig.colors.solids.primary}} className="px-5 py-5 text-white font-bold text-[1.2rem] rounded-[4px]" type="submit">
         {form?.button?.text || 'Submit'}
       </button>
       

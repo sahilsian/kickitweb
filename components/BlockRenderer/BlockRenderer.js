@@ -10,7 +10,7 @@ import { Gallery } from '../Core/Gallery'
 import { Query } from '../Core/Query'
 import { Group } from '../Core/Group'
 import { Services } from '../Custom/Services'
-import { GravityFormsComponent } from '../GravityForms/GravityFormsField'
+import { GravityFormsComponent } from '../GravityForms/GravityFormsFields'
 import { List } from '../Core/List'
 import { ListItem } from '../Core/List/ListItem'
 import { Label } from '../Custom/Label'
@@ -312,7 +312,6 @@ export const BlockRenderer = ({ items, blocks }) => {
                 return (
                     <div className={``}>
                         <Image
-                            onClick={() => setOpen(true)}
                             key={block.id}
                             src={block.attributes.url}
                             height={block.attributes.height}

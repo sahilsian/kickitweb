@@ -17,5 +17,6 @@ const siteConfig = {
         sitename: "Kickit Web Development"
     }
   };
+
   
   export default siteConfig;

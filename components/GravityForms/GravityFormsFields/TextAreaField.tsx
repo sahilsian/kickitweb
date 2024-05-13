@@ -30,7 +30,7 @@ export default function TextAreaField({ field, fieldErrors }: Props) {
 
   return (
     <div className={`gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " (Optional)"}`}</label>
+      <label className="text-left label" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
       <Textarea
         name={String(id)}
         id={htmlId}

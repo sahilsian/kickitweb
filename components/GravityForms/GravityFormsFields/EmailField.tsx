@@ -31,7 +31,7 @@ export default function EmailField({ field, fieldErrors }: Props) {
 
   return (
     <div className={`gfield text-white gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-white label text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " (Optional)"}`}</label>
+      <label className="label text-left" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
       <Input
         type="email"
         name={String(id)}

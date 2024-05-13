@@ -24,7 +24,7 @@ html, body {
   }
 
   .label {
-    @apply mb-2 block text-sm font-[300]
+    @apply mb-4 block text-sm text-text-main font-semibold text-[1rem];
   }
   
   .link {
@@ -37,7 +37,6 @@ html, body {
     display: none;
   }
 }
-
 
 .minw300 {
   min-width: 300px;

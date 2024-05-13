@@ -42,12 +42,12 @@ export default function RadioField({ field, fieldErrors }: Props) {
 
   return (
     <fieldset id={htmlId} className={`gfield gfield-${type} ${cssClass}`.trim()}>
-      <legend className="text-left text-sm">{label}</legend>
+      <legend className="text-left label">{label}</legend>
       {choices?.map(input => {
         const text = input?.text || '';
         const inputValue = input?.value || '';
         return (
-          <div key={inputValue}>
+          <div key={inputValue} className="py-1">
             <input
               type="radio"
               name={String(id)}
@@ -55,7 +55,7 @@ export default function RadioField({ field, fieldErrors }: Props) {
               value={inputValue}
               onChange={handleChange}
             />
-            <label htmlFor={`choice_${id}_${value}`}>{text}</label>
+            <label className="pl-3" htmlFor={`label choice_${id}_${value}`}>{text}</label>
           </div>
         );
       }
