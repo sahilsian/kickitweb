@@ -38,6 +38,16 @@ html, body {
   }
 }
 
+.menu {
+  display: none;
+}
+
+@media screen and (max-width: 1020px) {
+  .menu {
+    display: flex;
+  }
+}
+
 .minw300 {
   min-width: 300px;
 }

@@ -83,11 +83,11 @@ export const MainMenu = ({ items, active, callToActionLabel, callToActionDestina
                     </div>
                     {/* Call to Action */}
                     <div className="flex items-center max-[1020px]:hidden">
-                            <CallToActionButton destination={callToActionDestination} buttonLabel={callToActionLabel} type="primary"></CallToActionButton>
+                            <CallToActionButton destination={callToActionDestination} buttonLabel={callToActionLabel} type="secondary"></CallToActionButton>
                         </div>
 
                     {/* Mobile Header Button */}
-                    <div className="my-7 flex items-center cursor-pointer min-[1020px]:hidden" onClick={onClick}>
+                    <div className="my-7 flex items-center cursor-pointer menu" onClick={onClick}>
                         <FontAwesomeIcon className="hover:opacity-80 transition-all" style={{ width: "24px", height: "24px" }} color={"#FFFFFF"} size="sm" icon={faBars} />
                     </div>
                 </div>
