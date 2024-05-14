@@ -14,7 +14,7 @@ const siteConfig = {
         }
     },
     texts: {
-        sitename: "Kickit Web Development",
+        sitename: "Kickit Web",
         formvalidation: "By opting into the web form above you are providing consent for Kickit Web Design to contact you back for your inquiry."
     }
   };

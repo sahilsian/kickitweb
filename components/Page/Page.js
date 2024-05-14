@@ -44,9 +44,11 @@ export const Page = (props) => {
                 <meta property="og:url" content={`${router.asPath}`}></meta>
                 <meta property="og:type" content="website"></meta>
                 <meta property="og:title" content={props.seo.title}></meta>
+                <meta content={siteConfig.texts.sitename} property="og:site_name"></meta>
                 <meta property="og:description" content={props.seo.metaDesc}
                 ></meta>
-                <meta property="og:image" content={props.seo.opengraphImage?.uri || ""}></meta>
+                <meta name="theme-color" content={siteConfig.colors.solids.primary}></meta>
+                <meta property="og:image" content={props.seo.opengraphImage?.uri || "/cover.png"}></meta>
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <meta name="twitter:card" content="summary_large_image"></meta>
                 <meta property="twitter:domain" content="bloombug.ca"></meta>
