@@ -11,7 +11,7 @@ export const Footer = ({ items }) => {
             <div className="flex w-full flex-wrap max-w-[1400px] gap-9 py-[150px] mx-auto p-5">
                 <div className="flex-1 min-w-[300px]">
                     <Link href={"/"}>
-                    <Image className="my-7" width={200} height={63} objectFit="cover" src={'/alt-logo.png'}></Image>
+                    <Image alt="Dark Logo" className="my-7" width={200} height={63} objectFit="cover" src={'/alt-logo.png'}></Image>
                     </Link>
                     <h4 className="text-[18px] pb-3">Halifax, NS</h4>
                     <h4 className="text-[18px] pb-3 ">info@kickitdesign.com</h4>
