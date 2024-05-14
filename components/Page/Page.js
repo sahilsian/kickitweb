@@ -59,7 +59,7 @@ export const Page = (props) => {
             </Head>
             <div className='relative overflow-hidden w-full '>
                 <div style={{width: active ? "300px" : "0px", transition: "width 0.2s", backgroundColor: siteConfig.colors.solids.cover}} className='fixed h-[200%] overflow-hidden z-[50]'>
-                    <div className='pt-[100px] px-[20px]'>
+                    <div className='pt-[120px] px-[20px]'>
 
                     {/* Mobile Menu */}
                     {props.mainMenuItems.map((item) => {
