@@ -24,16 +24,16 @@ export const Carousel = ({ data, visibleitems=4 }) => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: visibleitems,
-                    slidesToScroll: visibleitems,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                     initialSlide: 2
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: visibleitems,
-                    slidesToScroll: visibleitems
+                    slidesToShow: 1,
+                    slidesToScroll: 1
                 }
             }
         ]
