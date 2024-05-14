@@ -109,6 +109,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                     image={block.attributes.data.image.url}
                     imageWidth={block.attributes.data.image.width}
                     imageHeight={block.attributes.data.image.height}
+                    imageAlt={block.attributes.data.image.alt}
                     align={block.attributes.data.align}
                     accent={block.attributes.data.accent_title}
                     title={block.attributes.data.title}
@@ -118,6 +119,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                     text_backdrop={block.attributes.data.text_background.url}
                     text_backdropWidth={block.attributes.data.text_background.width}
                     text_backdropHeight={block.attributes.data.text_background.height}
+                    text_backdropAlt={block.attributes.data.text_background.alt}
                 >
 
                 </ImageHighlight>

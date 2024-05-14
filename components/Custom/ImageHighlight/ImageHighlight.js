@@ -6,7 +6,7 @@ import { HeadingLabel } from "../HeadingLabel";
 import { Paragraph } from "../../Core/Paragraph";
 import { CallToActionButton } from "../CallToActionButton";
 
-export const ImageHighlight = ({image, imageWidth, imageHeight, align, accent, title="hello world", paragraph="lorem ipsum dolor", buttonText="Contact us", destination="/", text_backdrop, text_backdropWidth, text_backdropHeight}) => {
+export const ImageHighlight = ({image, imageWidth, imageHeight, align, accent, title="hello world", paragraph="lorem ipsum dolor", buttonText="Contact us", destination="/", text_backdrop, text_backdropWidth, text_backdropHeight, text_backdropAlt, imageAlt}) => {
     const direction = {
         right: 'row',
         left: 'row-reverse'
@@ -25,7 +25,7 @@ export const ImageHighlight = ({image, imageWidth, imageHeight, align, accent, t
                 <div className="flex-[1.3] max-[970px]:hidden max-[970px]:flex=[0.5] max-[1250px]:flex-1 max-[1075px]:flex-[0.75]">
                 </div>
                 <div className="flex-1">
-                    <Image className="max-[970px]:w-[110%] max-[540px]:w-[100%] max-[540px]:h-[200%] max-[970px]:h-[110%]" ref={parallaxImage.ref} objectPosition={"bottom"} width={imageWidth} height={imageHeight} objectFit="cover" src={image}>
+                    <Image className="max-[970px]:w-[110%] max-[540px]:w-[100%] max-[540px]:h-[200%] max-[970px]:h-[110%]" ref={parallaxImage.ref} objectPosition={"bottom"} width={imageWidth} height={imageHeight} objectFit="cover" src={image} alt={imageAlt}>
                     </Image>
                 </div>
             </div>
@@ -33,7 +33,9 @@ export const ImageHighlight = ({image, imageWidth, imageHeight, align, accent, t
                 <div className="max-w-[1400px] max-[970px]:justify-center mx-auto w-full h-full flex relative items-center">
                     <div className="flex relative items-center w-full h-full max-w-[600px] max-[970px]:m-4 max-[1280px]:max-w-[400px] ">
                         <div className="absolute max-[970px]:hidden left-0">
-                            <Image width={text_backdropWidth} height={text_backdropHeight} src={text_backdrop}></Image>
+                            <Image width={text_backdropWidth} height={text_backdropHeight} src={text_backdrop}
+                            alt={text_backdropAlt}
+                            ></Image>
                         </div>
                         <div className="absolute max-[970px]:bg-[#FFFFFFE9] rounded-lg p-8" ref={parallaxCol.ref}>
                             <HeadingLabel textAlign={"left"} color={siteConfig.colors.solids.primary} content={accent}></HeadingLabel>

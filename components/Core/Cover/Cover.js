@@ -20,7 +20,7 @@ export const Cover = ({children, background, className}) => {
             </div>
             <div className={`w-[110%] h-[110%] top-[-20px] absolute`}>
                 <div style={{ '--cover-color': siteConfig.colors.solids.cover }}  className="w-full cover-bg opacity-[80%] h-full absolute z-10"></div>
-                <Image ref={parallaxImage.ref} alt="Cover" src={background} objectFit="cover" fill className='absolute' />
+                <Image ref={parallaxImage.ref} alt="Cover Image" src={background} objectFit="cover" fill className='absolute' />
             </div>
 
         </div>

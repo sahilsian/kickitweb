@@ -33,6 +33,7 @@ export const MiniCover = ({ image, title, description, showbutton, buttondestina
             <Image
                 ref={parallaxImage.ref}
                 src={image.url}
+                alt={image.alt}
                 fill
                 objectFit="Cover"
                 style={{position: "absolute"}}

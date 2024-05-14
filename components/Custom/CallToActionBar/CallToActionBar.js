@@ -15,7 +15,9 @@ export const CallToActionBar = ({ title, paragraph, image, button_text, button_d
                 <div className="flex items-center max-[640px]:items-center  max-[800px]:items-start max-[800px]:flex-col gap-5">
                     {onlineImage && (
                         <div className="max-w-[150px]">
-                            <Image width={onlineImage.width} height={onlineImage.height} src={onlineImage.url}></Image>
+                            <Image width={onlineImage.width} height={onlineImage.height} src={onlineImage.url}
+                            alt={onlineImage.alt}
+                            ></Image>
                         </div>
                     )}
                     <Link href={button_destination}>

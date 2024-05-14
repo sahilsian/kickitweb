@@ -35,7 +35,7 @@ export const ImageText = ({title, header, description, button_text, button_desti
                     src={image.url}
                     width={image.width}
                     height={image.height}
-                    alt="industries that we provide"
+                    alt={image.alt}
                 />
                 </div>
             </div> 
