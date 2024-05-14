@@ -16,7 +16,7 @@ export const Services = ({ data }) => {
                             backgroundColor: item.color
                         }}
                         href={item.button_destination ? item.button_destination : `${router.pathname}#${item.id_destination}`}
-                        className="flex-1 w-full min-w-[350px] max-sm:items-center max-sm:flex-col-reverse p-6 hover:opacity-85 cursor-pointer transition-all flex ">
+                        className="flex-1 w-full min-w-[320px] max-sm:items-center max-sm:flex-col-reverse p-6 hover:opacity-85 cursor-pointer transition-all flex ">
                         <div className="flex-1 flex flex-col justify-between w-full h-full">
                             <div >
                                 <Heading content={item.title} textColor={item.text_color} level={3}></Heading>

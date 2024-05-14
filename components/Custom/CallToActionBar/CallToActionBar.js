@@ -12,9 +12,9 @@ export const CallToActionBar = ({ title, paragraph, image, button_text, button_d
                     <Heading textAlign={"left"} level={3} textColor={"white"} content={title} ></Heading>
                 </div>
                 <Paragraph content={paragraph} textColor={"#FFFFFF"} fontSize="18px"></Paragraph>
-                <div className="flex items-center max-[640px]:items-center  max-[800px]:items-start max-[800px]:flex-col gap-5">
+                <div className="items-center justify-center sm:justify-start flex-wrap flex max-[640px]:justify-center max-[800px]:items-start max-[800px]:flex-col gap-5">
                     {onlineImage && (
-                        <div className="max-w-[150px]">
+                        <div className="mb-1 max-w-[150px]">
                             <Image width={onlineImage.width} height={onlineImage.height} src={onlineImage.url}
                             alt={onlineImage.alt}
                             ></Image>
@@ -32,7 +32,7 @@ export const CallToActionBar = ({ title, paragraph, image, button_text, button_d
 
 
             </div>
-            <div className="flex-1 min-w-[250px] flex justify-center items-center">
+            <div className="flex-1 min-w-[250px] mobilehidden flex justify-center items-center">
                 {/* <Image width={image.width} height={image.height} src={image.url}></Image> */}
             </div>
         </div>
