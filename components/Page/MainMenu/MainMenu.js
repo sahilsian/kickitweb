@@ -83,7 +83,7 @@ export const MainMenu = ({ items, active, callToActionLabel, callToActionDestina
                     </div>
                     {/* Call to Action */}
                     <div className="flex items-center max-[1020px]:hidden">
-                            <CallToActionButton destination={callToActionDestination} buttonLabel={callToActionLabel} type="secondary"></CallToActionButton>
+                            <CallToActionButton destination={callToActionDestination} buttonLabel={callToActionLabel} type="primary"></CallToActionButton>
                         </div>
 
                     {/* Mobile Header Button */}

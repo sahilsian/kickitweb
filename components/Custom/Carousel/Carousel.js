@@ -2,22 +2,21 @@ import React from "react";
 import Slider from "react-slick";
 import { CarouselItem } from "./CarouselItem";
 
-export const Carousel = ({ data }) => {
+export const Carousel = ({ data, visibleitems=4 }) => {
 
     var settings = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: visibleitems,
+        slidesToScroll: visibleitems,
         initialSlide: 0,
-        
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
+                    slidesToShow: visibleitems,
+                    slidesToScroll: visibleitems,
                     infinite: true,
                     dots: true
                 }
@@ -25,16 +24,16 @@ export const Carousel = ({ data }) => {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
+                    slidesToShow: visibleitems,
+                    slidesToScroll: visibleitems,
                     initialSlide: 2
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToShow: visibleitems,
+                    slidesToScroll: visibleitems
                 }
             }
         ]
@@ -45,7 +44,7 @@ export const Carousel = ({ data }) => {
         <Slider {...settings}>
           {data.map((item) => {
             return (
-                <div>
+                <div className="h-full">
                     <CarouselItem subtitle={item.subtitle} description={item.description} title={item.title} image={item.image}>
                     </CarouselItem>
                 </div>

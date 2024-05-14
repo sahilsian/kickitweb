@@ -1,5 +1,5 @@
 export const Columns = ({ isStackedOnMobile, children, className, padding }) => {
-    return <div className="max-w-[1280px] w-full columns mx-auto">
+    return <div className="max-w-[1400px] w-full columns mx-auto">
         <div style={{
             paddingBottom: padding ? padding.bottom : "0px", 
             paddingTop: padding ? padding.top : "0px", 
