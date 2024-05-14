@@ -48,14 +48,14 @@ export const Page = (props) => {
                 <meta property="og:description" content={props.seo.metaDesc}
                 ></meta>
                 <meta name="theme-color" content={siteConfig.colors.solids.primary}></meta>
-                <meta property="og:image" content={props.seo.opengraphImage?.uri || "/cover.png"}></meta>
+                <meta property="og:image" content={props.seo.opengraphImage?.uri || "/opengraph-default.png"}></meta>
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <meta name="twitter:card" content="summary_large_image"></meta>
-                <meta property="twitter:domain" content="bloombug.ca"></meta>
+                <meta property="twitter:domain" content="kickitweb.ca"></meta>
                 <meta property="twitter:url" content={`${router.asPath}`}></meta>
                 <meta name="twitter:title" content={props.seo.metaDesc}></meta>
                 <meta name="twitter:description" content={props.seo.metaDesc}></meta>
-                <meta name="twitter:image" content={props.seo.opengraphImage?.uri || ""}></meta>
+                <meta name="twitter:image" content={props.seo.opengraphImage?.uri || "/opengraph-default.png"}></meta>
             </Head>
             <div className='relative overflow-hidden w-full '>
                 <div style={{width: active ? "300px" : "0px", transition: "width 0.2s", backgroundColor: siteConfig.colors.solids.cover}} className='fixed h-[200%] overflow-hidden z-[50]'>
