@@ -1,6 +1,7 @@
 import GravityForm from '../GravityForm';
 import { useEffect, useState } from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
+import siteConfig from '../../../site.config';
 
 export const GravityFormsComponent = ( { formId }) => {
     const [form, setForm] = useState()
@@ -29,7 +30,7 @@ export const GravityFormsComponent = ( { formId }) => {
                 size={50}
                 aria-label="Loading Spinner"
                 data-testid="loader"
-                color="#FFFFFF"
+                color={siteConfig.colors.solids.primary}
                 ></ClipLoader>
             </div>
         )

@@ -13,7 +13,7 @@ export const PricingBlock = ({button_destination, title, price, description, dis
         setShowAllItems(!showAllItems);
     };
     return (
-        <div style={{borderColor: siteConfig.colors.solids.primary}} className="max-w-[600px] w-full border-2 rounded-xl">
+        <div style={{borderColor: siteConfig.colors.solids.primary}} className="w-full border-2 rounded-xl">
             <div className="w-full p-5">
                 <div className="max-w-[300px] mx-auto flex rounded-full bg-black w-full p-[3px]">
                     <div style={{backgroundColor: !yearly ? siteConfig.colors.solids.primary : "unset"}} onClick={()=>{setYearly(false)}} className="cursor-pointer flex-[1] font-bold text-white px-6 py-3 text-center rounded-full transition-all">

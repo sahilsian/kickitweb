@@ -96,7 +96,7 @@ export const BlockRenderer = ({ items, blocks }) => {
             
             case "acf/carousel": {
                 console.log(block.attributes.data)
-                return <Carousel data={mapACFRepeater(block.attributes.data)}></Carousel>
+                return <Carousel data={mapACFRepeater(block.attributes.data)} visibleitems={parseInt(block.attributes.data.visibleitems)}></Carousel>
             }
 
             case "acf/features": {
@@ -335,6 +335,7 @@ export const BlockRenderer = ({ items, blocks }) => {
 
                 )
             }
+
             default: {
                 console.log("UNKNOWN:", block)
                 return null;

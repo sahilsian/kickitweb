@@ -18,7 +18,7 @@ export const MiniCover = ({ image, title, description, showbutton, buttondestina
     return (
         <div className="w-full h-[600px] relative overflow-hidden">
             <div ref={parallaxColumns.ref} className={`w-full absolute z-20 pt-[120px] px-6 md:pt-[200px] lg:pt-[170px]`}>
-                <div className="max-w-[600px] mx-auto">
+                <div className="max-w-[900px] mx-auto">
                     <Heading content={title} textColor={"white"} level={1} textAlign={"center"}></Heading>
                     <h2 className={`text-white text-center ${getFontSizeForHeading("p")}`}>{description}</h2>
                     {showbutton == "1" &&

@@ -86,7 +86,7 @@ export default function GravityFormsForm({ form, id }: Props) {
       </button>
       
       
-      <p className="text-[10px] text-center text-[#ffffffcc] mt-2">By opting into the web form above you are providing consent for Bloombug to contact you back for your quote.</p>
+      <p style={{color: siteConfig.colors.texts.secondary}} className="text-[11px] text-center mt-2">{siteConfig.texts.formvalidation}</p>
 
       {(newData && newData.submitGfForm.errors == null) && (
         <div className={" text-center p-3 mt-2 rounded-lg"}>Thank you for submitting, you will be redirected to our thank you screen shortly.</div>
