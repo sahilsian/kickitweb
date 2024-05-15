@@ -8,7 +8,7 @@ export const Services = ({ data }) => {
     const router = useRouter();
     console.log(data)
     return (
-        <div className="flex flex-wrap border-2 rounded-xl overflow-hidden">
+        <div className="flex flex-wrap gap-6 overflow-hidden">
             {data.map((item) => {
                 return (
                     <Link
@@ -16,7 +16,7 @@ export const Services = ({ data }) => {
                             backgroundColor: item.color
                         }}
                         href={item.button_destination ? item.button_destination : `${router.pathname}#${item.id_destination}`}
-                        className="flex-1 w-full min-w-[320px] max-sm:items-center max-sm:flex-col-reverse p-6 hover:opacity-85 cursor-pointer transition-all flex ">
+                        className="flex-1 w-full rounded-[6px] min-w-[340px] border-[2px] w-full max-sm:items-center max-sm:flex-col-reverse p-6 hover:opacity-85 cursor-pointer transition-all flex ">
                         <div className="flex-1 flex flex-col justify-between w-full h-full">
                             <div >
                                 <Heading content={item.title} textColor={item.text_color} level={3}></Heading>

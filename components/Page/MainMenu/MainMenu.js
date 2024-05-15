@@ -35,7 +35,7 @@ export const MainMenu = ({ items, active, callToActionLabel, callToActionDestina
                     <div className="flex gap-8">
                         {/* Site Logo. Defined by logo.png */}
                         <Link href={"/"}>
-                            <Image alt="Light Logo" className="my-7 min-[960px]:max-w-[150px] max-[960px]:max-w-[100px]" width={200} height={63} objectFit="cover" src={'/logo.png'}></Image>
+                            <Image alt="Light Logo" className="my-7 lg:max-w-[150px] max-w-[100px]" width={200} height={63} objectFit="cover" src={'/logo.png'}></Image>
                         </Link>
 
                         {/* Nav Links */}

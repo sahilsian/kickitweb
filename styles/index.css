@@ -20,7 +20,7 @@ html, body {
 
 @layer components { 
   .btn {
-    @apply hover:opacity-80 rounded-[8px] text-center max-w-[300px] font-medium transition-all inline-block p-3 px-4 cursor-pointer text-black shadow-lg
+    @apply hover:opacity-80 rounded-[8px] text-center max-w-[400px] font-medium transition-all inline-block p-3 px-4 cursor-pointer text-black shadow-lg
   }
 
   .label {
@@ -35,6 +35,14 @@ html, body {
 @media screen and (max-width: 600px) {
   .mobilehidden {
     display: none;
+  }
+
+  .ctabutton {
+    text-align: center !important;
+  }
+  
+  .mobilecenter {
+    justify-content: center;
   }
 }
 

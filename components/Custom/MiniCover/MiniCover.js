@@ -22,7 +22,7 @@ export const MiniCover = ({ image, title, description, showbutton, buttondestina
                     <Heading content={title} textColor={"white"} level={1} textAlign={"center"}></Heading>
                     <h2 className={`text-white text-center ${getFontSizeForHeading("p")}`}>{description}</h2>
                     {showbutton == "1" &&
-                    <div>
+                    <div className="w-full">
                         <CallToActionButton destination={buttondestination} buttonLabel={buttontext} type="secondary" align="center"></CallToActionButton>
                     </div>
                     }
