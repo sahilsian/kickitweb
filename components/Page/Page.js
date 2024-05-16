@@ -22,7 +22,7 @@ export const Page = (props) => {
     return (
         <div className={`font-heading`}>
             <Head>
-                <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
+                <link rel="icon" type="image/x-icon" href="/images/favicon.png"></link>
                 <title>{props.seo.title}</title>
                 <meta name='description' content={props.seo.metaDesc}></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"></meta>
