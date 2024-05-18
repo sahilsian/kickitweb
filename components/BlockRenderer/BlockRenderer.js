@@ -13,7 +13,6 @@ import { Services } from '../Custom/Services'
 import { GravityFormsComponent } from '../GravityForms/GravityFormsFields'
 import { List } from '../Core/List'
 import { ListItem } from '../Core/List/ListItem'
-import { Label } from '../Custom/Label'
 import { HeadingLabel } from '../Custom/HeadingLabel'
 import { BuyingPoint } from '../Custom/BuyingPoint'
 import { ImageHighlight } from '../Custom/ImageHighlight'
@@ -26,6 +25,7 @@ import { ImageText } from '../Custom/ImageText'
 import { Features } from '../Custom/Features'
 import { ScrollingBullets } from '../Custom/ScrollingBullets'
 import { MiniCover } from '../Custom/MiniCover'
+import { IDDiv } from '../Custom/IDDiv'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
@@ -104,6 +104,11 @@ export const BlockRenderer = ({ items, blocks }) => {
                 return <Features mainTitle={block.attributes.data.maintitle} featuresArray={mapACFRepeater(block.attributes.data)} color={block.attributes.data.color} ></Features>
             }
 
+            case "acf/iddiv": {
+                console.log(block)
+                return <IDDiv id={block.attributes.data.id}></IDDiv>
+            }
+
             case "acf/image-highlight": {
                 return <ImageHighlight
                     image={block.attributes.data.image.url}
@@ -140,6 +145,8 @@ export const BlockRenderer = ({ items, blocks }) => {
                         showbutton={block.attributes.data.showbutton}
                         buttondestination={block.attributes.data.buttondestination}
                         buttontext={block.attributes.data.buttontext}
+                        showscroll={block.attributes.data.showscrollbutton}
+                        idscroll={block.attributes.data.idscroll}
                     ></MiniCover>
                 )
             }
