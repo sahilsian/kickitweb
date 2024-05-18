@@ -4,9 +4,9 @@ import siteConfig from "../../../site.config";
 import { Heading } from "../../Core/Heading";
 import { getFontSizeForHeading } from "../../../lib/fonts";
 import { CallToActionButton } from "../CallToActionButton";
+import { ShowScroll } from "../ShowScroll";
 
-
-export const MiniCover = ({ image, title, description, showbutton, buttondestination, buttontext }) => {
+export const MiniCover = ({ image, title, description, showbutton, buttondestination, buttontext, showscroll, idscroll = "" }) => {
     const parallaxColumns = useParallax({
         speed: -12,
       });
@@ -26,6 +26,14 @@ export const MiniCover = ({ image, title, description, showbutton, buttondestina
                         <CallToActionButton destination={buttondestination} buttonLabel={buttontext} type="secondary" align="center"></CallToActionButton>
                     </div>
                     }
+                    <div>
+                    {
+                        showscroll == "1" &&
+                        <ShowScroll id_name={idscroll}>
+
+                        </ShowScroll>
+                    }
+                    </div>
                 </div>
             </div>
             <div style={{ '--cover-color': siteConfig.colors.solids.cover }}  className="w-full cover-bg opacity-[80%] h-full absolute z-10"></div>
