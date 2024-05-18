@@ -14,7 +14,7 @@ export const Footer = ({ items }) => {
                     <Image alt="Dark Logo" className="my-7" width={200} height={63} objectFit="cover" src={'/alt-logo.png'}></Image>
                     </Link>
                     <h4 className="text-[18px] pb-3">Halifax, NS</h4>
-                    <h4 className="text-[18px] pb-3 ">info@kickitdesign.com</h4>
+                    <h4 className="text-[18px] pb-3 ">info@kickitweb.ca</h4>
                     <h4 className="text-[18px] pb-3">778 952-6800</h4>
                 </div>
                 <div className="flex-1 text-[18px] min-w-[300px]">
