@@ -19,7 +19,7 @@ export const Services = ({ data }) => {
                         className="flex-1 w-full rounded-[6px] min-w-[340px] border-[2px] w-full max-sm:items-center max-sm:flex-col-reverse p-6 hover:opacity-85 cursor-pointer transition-all flex ">
                         <div className="flex-1 flex flex-col justify-between w-full h-full">
                             <div >
-                                <Heading content={item.title} textColor={item.text_color} level={3}></Heading>
+                                <Heading content={item.title} textColor={item.text_color} level={5}></Heading>
                                 <Paragraph textColor={item.text_color} content={item.description}></Paragraph>
                             </div>
 
