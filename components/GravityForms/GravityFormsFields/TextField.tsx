@@ -23,15 +23,15 @@ interface Props {
 const DEFAULT_VALUE = '';
 
 export default function TextField({ field, fieldErrors }: Props) {
-  const { id, type, label, description, cssClass, isRequired, placeholder } = field;
+  const { id, type, label, visibility, description, cssClass, isRequired, placeholder } = field;
   const htmlId = `field_${id}`;
   const { state, dispatch } = useGravityForm();
   const fieldValue = state.find((fieldValue: FieldValue) => fieldValue.id === id) as StringFieldValue | undefined;
   const value = fieldValue?.value || DEFAULT_VALUE;
-
+  console.log(field,visibility);
   return (
     <div className={`gfield gfield-${type} ${cssClass}`.trim()}>
-      <label className="text-left text-white label text-sm" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
+      <label className="text-left label" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
       <Input
         type="text"
         name={String(id)}

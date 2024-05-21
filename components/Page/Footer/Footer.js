@@ -8,7 +8,7 @@ import { Paragraph } from "../../Core/Paragraph"
 
 export const Footer = ({ items }) => {
     return (
-        <div style={{backgroundColor: siteConfig.colors.solids.dark}}>
+        <div style={{backgroundColor: siteConfig.colors.solids.dark}} className="mt-7">
 
             <div className="flex w-full text-white flex-wrap max-w-[1400px] gap-12 py-[50px] mx-auto p-5">
                 <div className="flex-1 w-full">
