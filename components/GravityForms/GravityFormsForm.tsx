@@ -71,7 +71,7 @@ export default function GravityFormsForm({ form, id }: Props) {
       e.preventDefault()
       sendForm()
       }}>
-      {/* <p className="text-xs text-left text-white opacity-70 mb-3">Required Fields Labeled with *</p> */}
+      
       {formFields.map(field =>
         <GravityFormsField
           key={field?.id}
@@ -79,6 +79,7 @@ export default function GravityFormsForm({ form, id }: Props) {
           fieldErrors={getFieldErrors(Number(field?.id))}
         />
       )
+      
       }
       
       <button style={{backgroundColor: siteConfig.colors.solids.primary}} className="px-5 py-5 text-white font-bold text-[1.2rem] rounded-[4px]" type="submit">

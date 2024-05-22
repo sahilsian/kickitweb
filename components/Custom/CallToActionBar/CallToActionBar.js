@@ -9,7 +9,7 @@ export const CallToActionBar = ({ title, paragraph, image, button_text, button_d
         <div style={{ backgroundColor: siteConfig.colors.solids.primary }} className="w-full p-10 rounded-xl flex-wrap-reverse gap-5 flex">
             <div className="min-w-[250px] flex-[2]">
                 <div className=" max-w-[600px]">
-                    <Heading textAlign={"left"} level={3} textColor={"white"} content={title} ></Heading>
+                    <Heading textAlign={"left"} level={3} textColor={"white"} content={title}></Heading>
                 </div>
                 <Paragraph content={paragraph} textColor={"#FFFFFF"} fontSize="18px"></Paragraph>
                 <div className="items-center justify-center sm:justify-start flex-wrap flex max-[800px]:items-start max-[800px]:flex-col gap-5">
