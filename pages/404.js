@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getFontSizeForHeading } from "../lib/fonts";
 import siteConfig from "../site.config";
 import Link from "next/link";
+import React from 'react'
 import { CallToActionButton } from "../components/Custom/CallToActionButton";
 
 export default function Custom404() {
