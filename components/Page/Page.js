@@ -9,6 +9,7 @@ import { Footer } from './Footer';
 import { useEffect, useState } from 'react';
 import siteConfig from '../../site.config';
 import Link from 'next/link';
+import React from 'react';
 import { CallToActionButton } from '../Custom/CallToActionButton';
 
 export const Page = (props) => {
