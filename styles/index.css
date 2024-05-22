@@ -20,7 +20,7 @@ html, body {
 
 @layer components { 
   .btn {
-    @apply hover:opacity-80 rounded-[8px] text-center max-w-[400px] font-medium transition-all inline-block p-3 px-4 cursor-pointer text-black shadow-lg
+    @apply hover:opacity-80 rounded-[8px] text-center max-w-[400px] font-normal transition-all inline-block p-3 px-4 cursor-pointer text-black shadow-lg
   }
 
   .label {

@@ -30,7 +30,7 @@ import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
 export const BlockRenderer = ({ items, blocks }) => {
-
+    console.log(blocks);
     return blocks.map(block => {
         switch (block.name) {
             // 
