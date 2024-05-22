@@ -7,11 +7,13 @@ const siteConfig = {
             error: '#dc3545', // Error color for validation messages, etc.
             success: '#28a745', // Success color for success messages, etc.
             cover: '#0c1524',
-            dark: '#32353A'
+            dark: '#32353A',
+            danger: '#FF0000'
         },
         texts: {
             primary: '#FFFFFF',
-            secondary: '#32353A' 
+            secondary: '#32353A',
+            danger: '#FFFFFF' 
         }
     },
     texts: {

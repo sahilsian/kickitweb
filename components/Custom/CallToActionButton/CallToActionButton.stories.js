@@ -44,3 +44,11 @@ Secondary.args = {
   destination: '/about',
   type: 'secondary',
 };
+
+export const Danger = Template.bind({});
+Danger.args = {
+  align: 'center',
+  buttonLabel: 'Danger Button',
+  destination: '/about',
+  type: 'danger',
+};
