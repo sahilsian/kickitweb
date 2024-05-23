@@ -22,7 +22,7 @@ export const CallToActionBar = ({ title, paragraph, image, button_text, button_d
                         </div>
                     )}
                     <Link className="flex-1 w-full sm:max-w-[300px] block" href={button_destination}>
-                        <div className="rounded-[300px] text-[14px] lg:text-[16px] hover:opacity-80 cursor-pointer font-semibold bg-white flex items-center px-8 py-3 justify-center">
+                        <div className="rounded-[300px] text-[14px] lg:text-[16px] hover:opacity-80 cursor-pointer font-[300] bg-white flex items-center px-8 py-3 justify-center">
                             <div className="w-[17px] bg-green-500 rounded-full mr-3 h-[17px]"></div>
 
                             {button_text}
