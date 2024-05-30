@@ -26,6 +26,7 @@ import { Features } from '../Custom/Features'
 import { ScrollingBullets } from '../Custom/ScrollingBullets'
 import { MiniCover } from '../Custom/MiniCover'
 import { IDDiv } from '../Custom/IDDiv'
+import { EmbeddedCheckout } from '../Custom/EmbeddedCheckout'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
@@ -133,6 +134,10 @@ export const BlockRenderer = ({ items, blocks }) => {
             case "acf/services": {
                 console.log(block.attributes.data)
                 return <Services data={mapACFRepeater(block.attributes.data)}></Services>
+            }
+
+            case "acf/embedded-checkout" : {
+                return <EmbeddedCheckout></EmbeddedCheckout>
             }
 
             case "acf/minicover": {
