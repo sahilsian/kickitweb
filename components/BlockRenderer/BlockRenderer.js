@@ -26,12 +26,17 @@ import { Features } from '../Custom/Features'
 import { ScrollingBullets } from '../Custom/ScrollingBullets'
 import { MiniCover } from '../Custom/MiniCover'
 import { IDDiv } from '../Custom/IDDiv'
-import { EmbeddedCheckout } from '../Custom/EmbeddedCheckout'
+import { Logos } from '../Custom/Logos'
+import { Card } from '../Custom/Card'
+import { Faq } from '../Custom/Faq'
+import { Benefits } from '../Custom/Benefits'
+import { Calendly } from '../Custom/Calendly'
+import { G_Reviews } from '../Custom/G_Reviews'
+import { ServiceHighlights } from '../Custom/ServiceHighlights'
 import mapACFRepeater from '../../lib/mapACFRepeater'
 import Image from 'next/image'
 
 export const BlockRenderer = ({ items, blocks }) => {
-    console.log(blocks);
     return blocks.map(block => {
         switch (block.name) {
             // 
@@ -67,6 +72,30 @@ export const BlockRenderer = ({ items, blocks }) => {
                 ></CallToActionButton>
             }
 
+            case "acf/benefits": {
+                return <Benefits benefits={mapACFRepeater(block.attributes.data)}>
+
+                </Benefits>
+            }
+
+            case "acf/service-highlights": {
+                console.log(block)
+                return <ServiceHighlights 
+                image={block.attributes.data.image} 
+                title={block.attributes.data.title} 
+                description={block.attributes.data.description} 
+                destination={block.attributes.data.destination
+                }>
+                </ServiceHighlights>
+            }
+
+            case "acf/faq" : {
+                console.log(block)
+                return <Faq list={mapACFRepeater(block.attributes.data)}>
+
+                </Faq>
+            }
+
             case "acf/call-to-action-bar": {
                 return <CallToActionBar
                     title={block.attributes.data.title}
@@ -80,9 +109,21 @@ export const BlockRenderer = ({ items, blocks }) => {
                 </CallToActionBar>
             }
 
+            case "acf/logos": {
+                return <Logos
+                    logo_1={block.attributes.data.logo_1}
+                    logo_2={block.attributes.data.logo_2}
+                    logo_3={block.attributes.data.logo_3}
+                    logo_4={block.attributes.data.logo_4}
+                    logo_5={block.attributes.data.logo_5}
+                    logo_6={block.attributes.data.logo_6}
+                >
+
+                </Logos>
+            }
+
 
             case "acf/tile": {
-                console.log(block);
                 return <Tile
                     title={block.attributes.data.title}
                     text={block.attributes.data.text}
@@ -94,19 +135,27 @@ export const BlockRenderer = ({ items, blocks }) => {
                 </Tile>
             }
 
+            case "acf/card" : {
+                return <Card
+                    image={block.attributes.data.image}
+                    title={block.attributes.data.title}
+                    description={block.attributes.data.description}
+                    showbutton={block.attributes.data.showbutton}
+                    call_to_action={block.attributes.data.call_to_action}
+                    destination={block.attributes.data.destination}
+                >
+                </Card>
+            }
             
             case "acf/carousel": {
-                console.log(block.attributes.data)
                 return <Carousel data={mapACFRepeater(block.attributes.data)} visibleitems={parseInt(block.attributes.data.visibleitems)}></Carousel>
             }
 
             case "acf/features": {
-                console.log(block.attributes.data)
                 return <Features mainTitle={block.attributes.data.maintitle} featuresArray={mapACFRepeater(block.attributes.data)} color={block.attributes.data.color} ></Features>
             }
 
             case "acf/iddiv": {
-                console.log(block)
                 return <IDDiv id={block.attributes.data.id}></IDDiv>
             }
 
@@ -116,32 +165,26 @@ export const BlockRenderer = ({ items, blocks }) => {
                     imageWidth={block.attributes.data.image.width}
                     imageHeight={block.attributes.data.image.height}
                     imageAlt={block.attributes.data.image.alt}
-                    align={block.attributes.data.align}
                     accent={block.attributes.data.accent_title}
                     title={block.attributes.data.title}
                     paragraph={block.attributes.data.paragraph}
-                    buttonText={block.attributes.data.button_text}
-                    destination={block.attributes.data.button_destination}
-                    text_backdrop={block.attributes.data.text_background.url}
-                    text_backdropWidth={block.attributes.data.text_background.width}
-                    text_backdropHeight={block.attributes.data.text_background.height}
-                    text_backdropAlt={block.attributes.data.text_background.alt}
+                    row_1={block.attributes.data.row_1}
+                    row_2={block.attributes.data.row_2}
+                    row_3={block.attributes.data.row_3}
                 >
 
                 </ImageHighlight>
             }
 
+            case "acf/g-reviews" : {
+                return <G_Reviews reviews={mapACFRepeater(block.attributes.data)}></G_Reviews>
+            }
+
             case "acf/services": {
-                console.log(block.attributes.data)
                 return <Services data={mapACFRepeater(block.attributes.data)}></Services>
             }
 
-            case "acf/embedded-checkout" : {
-                return <EmbeddedCheckout></EmbeddedCheckout>
-            }
-
             case "acf/minicover": {
-                console.log(block)
                 return (
                     <MiniCover 
                         image={block.attributes.data.image}
@@ -156,8 +199,12 @@ export const BlockRenderer = ({ items, blocks }) => {
                 )
             }
 
+            case "acf/calendly": {
+                return <Calendly calendlyURL={block.attributes.data.calendlyURL}>
+                </Calendly>
+            }
+
             case "acf/pricing-block": {
-                console.log(block.attributes.data)
                 return <PricingBlock
                     button_destination={block.attributes.data.button_destination}
                     title={block.attributes.data.title}
@@ -172,7 +219,6 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
 
             case "acf/image-text": {
-                console.log(block.attributes.data)
                 return <ImageText
                     title={block.attributes.data.title}
                     header={block.attributes.data.header}
@@ -192,7 +238,7 @@ export const BlockRenderer = ({ items, blocks }) => {
                     key={block.id}
                     buttonLabel={block.attributes.data.label}
                     destination={block.attributes.data.destination?.url}
-                    target={block.attributes.data?.destination?.target}
+                    target={"_blank"}
                     align={block.attributes.data.align}
                 ></CallToActionButton>
             }
@@ -229,7 +275,6 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
 
             case "acf/highlights": {
-                console.log(block);
                return  <Highlights
                     title_heading = {block.attributes.data.title_heading}
                     title_explanation = {block.attributes.data.title_explanation}
@@ -328,7 +373,7 @@ export const BlockRenderer = ({ items, blocks }) => {
             // Render for ALL images on website. This is important because each image must be optimized effectively to preserve fast page speeds.
             case "core/image": {
                 return (
-                    <div className={``}>
+                    <div className={""}>
                         <Image
                             key={block.id}
                             src={block.attributes.url}

@@ -14,16 +14,15 @@ export const MiniCover = ({ image, title, description, showbutton, buttondestina
     const parallaxImage = useParallax({
     speed: 20,
     });
-    console.log(showbutton)
     return (
-        <div className="w-full h-[600px] relative overflow-hidden">
+        <div className="w-full h-[720px] relative overflow-hidden">
             <div ref={parallaxColumns.ref} className={`w-full absolute z-20 pt-[120px] px-6 md:pt-[200px] lg:pt-[170px]`}>
                 <div className="max-w-[900px] mx-auto">
                     <Heading content={title} textColor={"white"} level={1} textAlign={"center"}></Heading>
                     <h2 className={`text-white text-center ${getFontSizeForHeading("p")}`}>{description}</h2>
                     {showbutton == "1" &&
                     <div className="w-full">
-                        <CallToActionButton destination={buttondestination} buttonLabel={buttontext} type="secondary" align="center"></CallToActionButton>
+                        <CallToActionButton destination={buttondestination} buttonLabel={buttontext} type="primary" align="center"></CallToActionButton>
                     </div>
                     }
                     <div>

@@ -30,7 +30,7 @@ export const MainMenu = ({ items, active, callToActionLabel, callToActionDestina
 
     return (
         <div className={`m-auto fixed top-0 z-[1000] left-0 right-0 `}>
-            <div style={{ backgroundColor: scrollY > 100 || active ? `${siteConfig.colors.solids.cover}${active ? "" : "FA"}` : "unset" }} className={` transition-all m-auto w-full px-5`}>
+            <div style={{ backgroundColor: siteConfig.colors.solids.cover}} className={` transition-all m-auto w-full px-5`}>
                 <div className={`max-w-[1400px] px-[0px] lg:px-[20px] mx-auto flex justify-between align-middle`}>
                     <div className="flex gap-8">
                         {/* Site Logo. Defined by logo.png */}
@@ -63,9 +63,17 @@ export const MainMenu = ({ items, active, callToActionLabel, callToActionDestina
                                                     <div>
                                                         {item.subMenuItem.map((subItem) => {
                                                             return (
-                                                                <Link className="block py-2 link" key={subItem.id} href={subItem.destination}>
+                                                                <Link className="py-2 link flex gap-3 items-center" key={subItem.id} href={subItem.destination}>
+                                                                    <div>
+                                                                        {subItem.icon &&
+                                                                        <Image src={subItem?.icon} height={25} width={25}></Image>
+                                                                        }
+                                                                    </div>
+                                                                    <div>
                                                                     <Label textWeight="400" content={subItem.label}></Label>
                                                                     <Label textColor="#747a80" content={subItem.subLabel}></Label>
+                                                                    </div>
+
                                                                 </Link>
                                                             )
                                                         })}

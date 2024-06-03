@@ -6,7 +6,6 @@ import Link from "next/link"
 
 export const Services = ({ data }) => {
     const router = useRouter();
-    console.log(data)
     return (
         <div className="flex flex-wrap gap-6 overflow-hidden">
             {data.map((item) => {

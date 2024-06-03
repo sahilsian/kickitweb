@@ -55,7 +55,7 @@ export const Page = (props) => {
                 <meta property="og:image" content={props.seo.opengraphImage?.uri || "/opengraph-default.png"}></meta>
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <meta name="twitter:card" content="summary_large_image"></meta>
-                <meta property="twitter:domain" content="kickitweb.ca"></meta>
+                <meta property="twitter:domain" content={siteConfig.texts.siteurl}></meta>
                 <meta property="twitter:url" content={`${router.asPath}`}></meta>
                 <meta name="twitter:title" content={props.seo.metaDesc}></meta>
                 <meta name="twitter:description" content={props.seo.metaDesc}></meta>
@@ -104,7 +104,7 @@ export const Page = (props) => {
                     <ParallaxProvider>
                         <BlockRenderer items={props.mainMenuItems} blocks={props.blocks}></BlockRenderer>
                     </ParallaxProvider>
-                    <Footer items={props.mainMenuItems}></Footer>
+                    <Footer callToActionLabel={props.callToActionLabel} callToActionDestination={props.callToActionDestination} items={props.mainMenuItems}></Footer>
                 </div>
             </div>
 

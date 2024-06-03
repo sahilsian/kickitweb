@@ -1,5 +1,4 @@
 export const Features = ({mainTitle='Title', featuresArray, color}) => {
-    console.log(featuresArray)
     return (
         <div style={{backgroundColor: color}} class="p-12 rounded-xl m-12"> 
         <h4 className="max-sm:text-center text-[1.95rem] leading-[2.1rem] lg:text-[2.35rem] mb-5 font-[600] lg:leading-[3rem]">{mainTitle}</h4>    

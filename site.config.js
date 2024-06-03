@@ -24,7 +24,8 @@ const siteConfig = {
             email: "hello@kickitweb.ca",
             phone: "778-952-6800",
             instagram: "https://www.instagram.com/kickitweb.ca",
-            facebook: "https://www.facebook.com/kickitweb/"
+            facebook: "https://www.facebook.com/kickitweb/",
+            copyright: "Kick it Web Design"
         }
         
     }

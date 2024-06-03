@@ -38,7 +38,6 @@ export const PricingBlock = ({button_destination, title, price, description, dis
                 </div>
                 <div className="mb-8">
                     {visibleItems.map((item) => {
-                        console.log(item)
                         return (
                             <div className="flex mb-2 justify-between font-medium">
                                 <p>{item.title}</p>

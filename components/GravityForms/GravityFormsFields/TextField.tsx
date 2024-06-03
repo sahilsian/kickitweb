@@ -28,7 +28,6 @@ export default function TextField({ field, fieldErrors }: Props) {
   const { state, dispatch } = useGravityForm();
   const fieldValue = state.find((fieldValue: FieldValue) => fieldValue.id === id) as StringFieldValue | undefined;
   const value = fieldValue?.value || DEFAULT_VALUE;
-  console.log(field,visibility);
   return (
     <div className={`gfield gfield-${type} ${cssClass}`.trim()}>
       <label className="text-left label" htmlFor={htmlId}>{`${label} ${isRequired ? " *" : " "}`}</label>
