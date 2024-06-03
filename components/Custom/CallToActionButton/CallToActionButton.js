@@ -7,7 +7,6 @@ export const CallToActionButton = ({ align = "left", buttonLabel, target, destin
         center: "text-center",
         right: "text-right"
     }
-    console.log(type)
     return (
         <div className={`ctabutton ${alignMap[align]} text-nowrap`}>
             <ButtonLink color={siteConfig.colors.solids[type]} fontColor={siteConfig.colors.texts[type]} destination={destination || "/"} target={target} label={buttonLabel}></ButtonLink>

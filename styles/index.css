@@ -48,6 +48,19 @@ html, body {
 
 .menu {
   display: none;
+  
+}
+
+p > a {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 800px) {
+  
+.wrapreverse {
+  flex-wrap: wrap-reverse;
+}
 }
 
 @media screen and (max-width: 1020px) {
@@ -64,9 +77,6 @@ html, body {
   min-width: 200px;
 }
 
-.wrapreverse {
-  flex-wrap: wrap-reverse;
-}
 
 .flexhalf {
   flex: 0.5;

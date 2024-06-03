@@ -25,7 +25,6 @@ export const ScrollingBullets = ({ bullets }) => {
             <Slider {...settings}>
             
             {bullets.map((item)=> {
-                console.log(item)
                 return (
                     <div className='!flex items-center gap-4'>
                         <div className='w-[20px] h-[20px] bg-white rounded-sm'>

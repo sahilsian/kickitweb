@@ -5,7 +5,6 @@ import { Paragraph } from "../../Core/Paragraph"
 import Link from "next/link"
 
 export const CallToActionBar = ({ title, paragraph, image, button_text, button_destination, onlineImage }) => {
-    console.log(onlineImage);
     return (
         <div style={{ backgroundColor: siteConfig.colors.solids.primary }} className="w-full p-10 rounded-xl flex-wrap-reverse gap-5 flex">
             <div className="min-w-[250px] flex-[2]">

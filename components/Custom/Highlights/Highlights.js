@@ -2,7 +2,6 @@ import Image from "next/image"
 import { useState } from "react";
 
 export const Highlights = ({ title_heading, title_explanation, checklist_descriptions = [], image_area, subtitlebold }) => {
-    console.log(checklist_descriptions); 
     return (
         <div className="flex flex-col items-center w-full bg-white">
             <div className="flex flex-col md:flex-row flex-1 w-full max-w-7xl mx-auto px-5 pt-5">
