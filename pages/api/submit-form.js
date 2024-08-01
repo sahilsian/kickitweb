@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import client from '../../lib/client'
+import {client} from '../../lib/client'
 
 const submitQuery = gql`
   mutation submitForm($id: ID!, $fieldValues: [FormFieldValuesInput]!) {

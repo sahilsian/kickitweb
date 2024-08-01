@@ -89,7 +89,7 @@ export const Footer = ({ items, callToActionLabel, callToActionDestination }) =>
             <div className="p-3" >
                 <div className="flex w-full  text-white font-medium max-w-[1400px] mx-auto justify-between p-5">
                     <div>
-                        <h4 className="">© 2024 Bloom Bug Screens</h4>
+                        <h4 className="">© {siteConfig.texts.footer.copyright}</h4>
                     </div>
                     <div className="flex gap-5">
                         <Link className="transition-all opacity-70 hover:opacity-100" href={"/company/privacy-policy"}>Privacy Policy</Link>

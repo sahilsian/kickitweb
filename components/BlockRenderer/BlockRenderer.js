@@ -200,6 +200,7 @@ export const BlockRenderer = ({ items, blocks }) => {
             }
 
             case "acf/calendly": {
+                console.log(block)
                 return <Calendly calendlyURL={block.attributes.data.calendlyURL}>
                 </Calendly>
             }
