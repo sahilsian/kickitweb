@@ -1,6 +1,5 @@
 import { AppProps } from 'next/app'
 import { ApolloProvider } from "@apollo/client";
-import client from '../lib/client';
 import '../styles/index.css'
 import NextNProgress from 'nextjs-progressbar';
 import { useEffect } from 'react';
@@ -18,7 +17,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       offset: 50,
     });
   }, []);
-  return <><NextNProgress color={siteConfig.colors.solids.accent} /> <div className="font-body"><Component {...pageProps} /></div></>
+  return <>
+    <NextNProgress
+      color={siteConfig.colors.solids.accent} 
+    /> 
+    <div className="font-body"><Component {...pageProps} />
+    </div>
+  </>
 }
 
 export default MyApp

@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client"
-import client from "../../lib/client"
+import {client} from "../../lib/client"
 
 const handler = async (req, res) => {
     try {
